@@ -1,0 +1,30 @@
+*{
+    background-color: white
+}
+
+#photo{
+    width: 20%;
+}
+.links{
+    display: inline;
+
+}
+
+.images{
+    width: 3%;
+}
+
+table, th, td{
+    border: 1px solid black;
+}
+
+#snakePic{
+    width: 20%;
+}
+
+.app{
+    display: inline;
+}
+
+/* textarea{ */
+/* } */
