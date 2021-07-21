@@ -1,0 +1,27 @@
+#div1{
+    display: inline;
+}
+
+#div2{
+    display: inline;
+}
+
+#div3{
+    display: flex;
+    flex-direction: column;
+}
+
+#div4{
+    display: flex;
+    flex-direction: column;
+}
+
+#div5{
+    display: flex;
+    flex-direction: column;
+}
+
+#div6{
+    display: flex;
+    flex-direction: column;
+}
