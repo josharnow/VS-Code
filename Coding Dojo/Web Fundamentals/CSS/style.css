@@ -1,0 +1,23 @@
+*{
+    background-color: blue;
+    color: white;
+}
+
+p{
+    color: white
+}
+
+h1{
+    color: yellow
+}
+
+div > p{
+    font-weight: bolder;
+    font-family: cursive;
+}
+
+/* Applies to p tag within div */
+
+div > div > p{
+    font-size: xx-large;
+}
