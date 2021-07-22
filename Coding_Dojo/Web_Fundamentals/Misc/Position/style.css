@@ -1,0 +1,53 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    height: 100vh;
+background-color: #e5dedb;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cg fill='%235b74f4' fill-opacity='0.4'%3E%3Cpath d='M12 0h18v6h6v6h6v18h-6v6h-6v6H12v-6H6v-6H0V12h6V6h6V0zm12 6h-6v6h-6v6H6v6h6v6h6v6h6v-6h6v-6h6v-6h-6v-6h-6V6zm-6 12h6v6h-6v-6zm24 24h6v6h-6v-6z'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
+}
+
+.fixed{
+    position: fixed;
+    bottom: 20px;
+    left: 30%;
+    /* moves FROM the left 30% */
+    text-align: center;
+    height: 200px;
+    width: 35%;
+    border: 2px solid black;
+    background-color: darkgrey;
+}
+
+#pokeball{
+    background-color: whitesmoke;
+    outline: 3px solid black;
+    height: 400px;
+    width: 400px;
+    margin: 125px auto;
+    border-radius: 100%;
+    box-shadow: 0 0 0 3px black;
+    overflow: hidden;
+}
+
+#topHalf{
+    height: 49%;
+    width: 100%;
+    background-color: red;
+    border-bottom: 5px solid black;
+}
+
+#middleCircle{
+        background-color: whitesmoke;
+    outline: 3px solid black;
+    height: 55px;
+    width: 400px;
+    /* margin: 125px auto; */
+    border-radius: 100%;
+    box-shadow: 0 0 0 3px black;
+    position: absolute;
+    top: 40%;
+    left: 46%;
+}
