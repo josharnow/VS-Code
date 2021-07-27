@@ -1,0 +1,36 @@
+h1{
+    color: rgb(95, 95, 95);
+    text-align: center;
+}
+
+div{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    padding: 1em 0;
+}
+
+#row1{
+    background-color: red;
+    margin: 0 0 1em;
+}
+
+#row2{
+    background-color: bisque;
+    margin: 0 0 1em;
+}
+
+#row3{
+    background-color: blue;
+}
+
+img{
+    width: 20%;
+}
+
+p{
+    color: gray;
+    text-align: center;
+    font-size: smaller;
+}
