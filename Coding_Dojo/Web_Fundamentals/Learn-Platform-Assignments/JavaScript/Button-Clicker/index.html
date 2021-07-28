@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojonary</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="hMargin">
+        <nav id="nav" class="flex spaceBetween">
+            <div class="font flex centerFlexV">
+                <h1>Dojonary</h1>
+            </div>
+            <div class="centerFlexV flex">
+                <input id="search" type="text" placeholder="Search">
+            </div>
+            <div class="centerFlexV flex">
+                <button id="navButton" onclick="login(this)">Login</button>
+            </div>
+        </nav>
+    </div>
+    <div id="bottom" class="hMargin">
+        <div>
+            <div id="leftColumn" class="flex">
+                <div id="topLeftBox" class="flex">
+                    <div class="leftBox b centerText font centerFlexV">
+                        <h1>ninja</h1>
+                        <h5><i>noun</i></h5>
+                        <h5>Plural: <i>Ninjas</i></h5>
+                        <button id="button1" onclick="alert('Ninja was liked')">13 Likes</button>
+                    </div>
+                    <div class="alignDivV rightBox font flex">
+                        <h4>A practitioner skilled in the <a href="#">Japanese</a> art of <a href="#">ninjutsu</a></h4>
+                    </div>
+                </div>
+                <div id="bottomLeftBox" class="flexColumn">
+                    <div class="alignDivV rightBox font flex">
+                        <h3>Dojonary is defined by <b>YOU</b></h3>
+                    </div>
+                    <div class="flex">
+                        <button id="button3" onclick="hide(this)">Add Definition</button>
+                    </div>
+                </div>
+            </div>
+            <div id="rightColumn">
+                <div id="box3" class="flex">
+                    <div class="leftBox b centerText font centerFlexV">
+                        <h1>ninja</h1>
+                        <h5><i>noun</i></h5>
+                        <h5>Plural: <i>Ninjas</i></h5>
+                        <button id="button2" onclick="alert('Ninja was liked')">37 Likes</button>
+                    </div>
+                    <div class="alignDivV rightBox font flex">
+                        <h4>A <a href="#">programmer</a> who breaks down problems with <a href="#">zen</a>-like focus</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+
+        </div>
+        <!-- <div id="rightColumn" class="flex">
+            <div id="topRightBox" class="flex">
+                <div class="leftBox b centerText font centerFlexV">
+                    <h1>ninja</h1>
+                    <h5><i>noun</i></h5>
+                    <h5>Plural: <i>Ninjas</i></h5>
+                    <button>37 Likes</button>
+                </div>
+                <div class="alignDivV rightBox font flex">
+                    <h4>A <a href="#">programmer</a> who breaks down problems with <a href="#">zen</a>-like focus</h4>
+                </div>
+            </div>
+        </div> -->
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

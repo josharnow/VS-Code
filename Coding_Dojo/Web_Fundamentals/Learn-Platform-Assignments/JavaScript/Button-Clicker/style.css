@@ -1,0 +1,174 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+
+#nav{
+    background-color: gray;
+    top: 0;
+    position: sticky;
+    left: 10%;
+    right: 10%;
+    height: 5vh;
+    /* margin-left: 20px; */
+}
+
+#search{
+    width: 400px;
+}
+
+.font{
+    font-family: cursive;
+}
+
+.flex{
+    display: flex;
+}
+
+.centerFlexV{
+    align-items: center;
+}
+
+.alignContentCenter{
+    align-content: center;
+}
+
+.spaceBetween{
+    justify-content: space-between;
+}
+
+.centerFlexH{
+    margin: 0 auto;
+}
+
+#bottom{
+    position: relative;
+    margin-top: 10%;
+    /* left: 10%; */
+    /* right: 10%; */
+}
+
+#topLeftBox{
+    border: 2px solid black;
+    height: 30%;
+    width: 1000px;
+    /* position: absolute; */
+}
+
+.hMargin{
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.centerJustify{
+    justify-content: center;
+}
+
+.evenSpace{
+    justify-content: space-evenly;
+}
+
+.flexStart{
+    justify-content: flex-start;
+}
+
+.centerText{
+    text-align: center;
+}
+
+.b{
+    /* margin-left: 4%; */
+}
+
+.relative{
+    position:relative
+}
+
+.absolute{
+    position: absolute;
+}
+
+.leftBox{
+    width: 20%;
+}
+
+.rightBox{
+    display: inline-block;
+    align-content: center;
+    width: 80%;
+}
+
+.halfTop{
+    top: 50%;
+}
+
+.noMargin{
+    margin: 0;
+}
+
+.alignTextV{
+    vertical-align: middle;
+}
+
+.alignDivV{
+    margin: auto;
+}
+
+#bottomLeftBox{
+    border: 2px solid black;
+    height: 90%;
+    width: 20vw;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    /* margin-top: 5%; */
+    margin: auto;
+    position: absolute;
+}
+
+#topRightBox{
+    border: 2px solid black;
+    height: 25%;
+    width: 40vw;
+    margin-top: 5%;
+    /* position: absolute; */
+}
+
+.flexColumn{
+    display: flex;
+    flex-direction: column;
+}
+
+#leftColumn{
+    margin-right: 37vw;
+}
+
+#rightColumn{
+    left: 0;
+    top:90%;
+    position: absolute;
+    margin-top:5%;
+}
+
+#box3{
+    margin-right: 37vw;
+    border: 1px solid black;
+}
+
+#button1{
+    background-color: yellow;
+}
+
+#button2{
+    background-color: yellow;
+}
+
+#button3{
+    align-content: center;
+    background-color: green;
+}
+
+#navButton{
+    background-color: blue;
+}

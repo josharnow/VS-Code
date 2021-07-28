@@ -1,0 +1,63 @@
+*{
+    margin: 0;
+}
+
+
+nav{
+    background-color: gray;
+    top: 0;
+    position: sticky;
+    left: 10%;
+    right: 10%;
+    height: 5vh;
+    /* margin-left: 20px; */
+}
+
+.font{
+    font-family: cursive;
+}
+
+.flex{
+    display: flex;
+}
+
+.centerFlexV{
+    align-items: center;
+}
+
+.spaceBetween{
+    justify-content: space-between;
+}
+
+.centerFlexH{
+    margin: 0 auto;
+}
+
+#bottom{
+    position: relative;
+    margin-top: 5%;
+    /* left: 10%; */
+    /* right: 10%; */
+}
+
+#topLeftBox{
+    border: 2px solid black;
+    left: 10%;
+}
+
+.hMargin{
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.centerJustify{
+    justify-content: center;
+}
+
+.evenSpace{
+    justify-content: space-evenly;
+}
+
+#word{
+    left: 0;
+}
