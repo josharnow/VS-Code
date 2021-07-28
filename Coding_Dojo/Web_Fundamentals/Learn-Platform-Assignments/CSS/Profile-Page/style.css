@@ -1,0 +1,273 @@
+nav{
+    background-color: black;
+    position: fixed;
+    display: flex;
+    /* overflow: hidden; */
+    /* justify-content: space-around; */
+    width: 100%;
+    top: 0;
+    left: 0;
+        /* border: 1px solid pink; */
+    /* height: 7vh; */
+    /* padding-top: 7vh; */
+}
+
+body{
+    /* padding-top: 10vh; */
+    /* overflow: hidden; */
+}
+
+#icon{
+    color: white;
+    font-family: cursive;
+}
+
+#buttonDiv{
+    display: flex;
+        /* border: 1px solid blue; */
+    align-items: center;
+    justify-content: flex-end;
+    width: 47%;
+    margin-right: 6%;
+}
+
+div>button{
+    color: white;
+    background-color: cyan;
+    height: 35%;
+    font-family: cursive;
+}
+
+#profileDiv{
+            /* border: 1px solid blue; */
+        width: auto;
+        margin-right: 20%;
+}
+
+#navLeft{
+    display: flex;
+    justify-content: flex-start;
+        /* border: 1px solid red; */
+    width: 72%;
+    margin-left: 6%;
+}
+
+#navLinks{
+    font-family: cursive;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+        /* border: 1px solid yellow; */
+}
+
+#home{
+        /* border: 1px solid pink */
+}
+
+#myProfile{
+        /* border: 1px solid pink */
+}
+
+#findConnections{
+        /* border: 1px solid pink */
+}
+
+.uulLink{
+    text-decoration: none;
+    color: gainsboro;
+}
+
+#bottomHalf{
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    top: 9vh;
+    left: 0;
+    width: 100%;
+    /* margin-top: 200px; */
+        /* border: 1px solid violet; */
+}
+
+#leftColumn{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-around; */
+    width: 55%;
+    height: 100%;
+        /* border: 1px solid brown; */
+}
+
+#leftTopContainer{
+        border: 5px solid gray;
+        height: 26vh;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        margin-bottom: 15px;
+}
+
+#leftBottomContainer{
+            border: 5px solid gray;
+        margin-top: 9px;
+        height: 23%;
+}
+
+#topBlue{
+    background-color: aqua;
+    width: 100%;
+    height: 15%;
+    padding-top: 42px;
+}
+
+#profilePic{
+    display: flex;
+    position: absolute;
+        /* border: 1px solid green; */
+    height: 18%;
+    margin-top: 15px;
+}
+
+.topLeftMargin{
+    margin-left: 9%;
+}
+
+.font{
+    font-family: cursive;
+}
+
+#topLeftMarginContent{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 13px 0 0 0;
+    /* height: 34vh; */
+        /* border: 1px solid green; */
+}
+
+#mapMarker{
+    height: 2vh;
+}
+
+#seattle{
+    display: flex;
+        /* border: 1px solid blue; */
+    align-items: center;
+}
+
+#profileText{
+    display: inline-block;
+        /* border: 1px solid blue; */
+}
+
+#gear{
+    height: 2vh;
+    margin-top: .9vh;
+}
+
+#gear2{
+    height: 2vh;
+    margin-top: .9vh;
+}
+
+.gear{
+    /* align-content: center; */
+    display:flex;
+    margin-top: 13%;
+}
+
+#editProfile{
+    display: flex;
+    align-content: center;
+    height: 100%;
+}
+
+#rightColumn{
+        /* border: 1px solid green; */
+    width: 37%;
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+}
+
+#rightTopContainer{
+    height: 25%;
+    border: 5px solid gray;
+}
+
+#rightBottomContainer{
+    height: 20vh;
+    border: 5px solid gray;
+    margin-top: 61px;
+    width: 100%;
+}
+
+.greyHeaders{
+    background-color: rgb(102, 99, 99);
+    height: 3vh;
+    padding-top: 1px;
+    color: white;
+    font-family: cursive;
+    display: flex;
+}
+
+#education{
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+}
+
+#blank{
+        /* border: 1px solid purple; */
+    height: auto;
+}
+
+#lightGreyFont{
+    color: rgb(163, 160, 160);
+}
+
+.topSnap{
+    margin: 10px;
+}
+
+.noVerticalMargin{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#cRequests{
+    background-color: lightgray;
+    border-radius: 50%;
+    height: 80%;
+    margin-left: 5px;
+
+}
+
+.rightAlign{
+    /* justify-content: space-between; */
+        align-content: center;
+}
+
+p{
+    margin: 7px;
+}
+
+.photoSize{
+    height: 20px;
+}
+
+.lowerPortion{
+    text-align: start;
+    height: auto;
+}
+
+.flex{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 33px;
+}
+
+#circle2{
+
+}
