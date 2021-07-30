@@ -1,0 +1,99 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+        border: 1px dotted red;
+}
+
+#nav{
+    background-color: black;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.font{
+    font-family: cursive;
+}
+
+#whiteFont{
+    color: white;
+    margin-left: 2%;
+}
+
+.centerText{
+    text-align: center;
+}
+
+.vMar{
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+.vMar2{
+    margin-top: 4%;
+    margin-bottom: 4%;
+}
+
+.hMar{
+    margin-left: 2vw;
+    margin-right: 2vw;
+}
+
+.vContainer{
+    border: 2px solid black;
+    width: fit-content;
+    height: fit-content;
+    margin-left: 15vw;
+}
+
+#pic{
+    border-radius: 50%;
+    height: 4vh;
+    /* margin: auto 0; */
+    margin-top: 10%;
+}
+
+.flex{
+    display: flex;
+}
+
+.justifyCenter{
+    justify-content: center;
+}
+
+.rightColumn{
+    margin-right: 12vw;
+}
+
+.hContainer{
+    border: 2px solid black;
+    width: fit-content;
+    width: 70%;
+    margin-left: 10%;
+    margin-bottom: 5%;
+}
+
+.button{
+    background-color: yellow;
+    box-shadow: .5vw .5vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
+}
+
+.alignRight{
+    justify-content: flex-end;
+}
+
+.width100{
+    width: 100%;
+}
+
+.vMar3{
+    margin: 5% 0;
+}
+
+/* .widthAuto{
+    width: auto;
+} */
