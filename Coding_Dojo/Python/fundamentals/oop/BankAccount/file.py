@@ -13,7 +13,7 @@ class BankAccount:
 
     def deposit(self, amount, times=1):
         original_balance = self.balance
-        self.balance += amount
+        self.balance += (amount * times)
         # for i in range(times+1):
         #     deposit_x = i + 1
         #     return deposit_x
@@ -24,7 +24,7 @@ class BankAccount:
         original_balance = self.balance
         if (self.balance - amount) < 0:
             fee = 5
-            print("Insufficient funds: Charging a ${fee} fee")
+            print(f"Insufficient funds: Charging a ${fee} fee")
             original_balance -= fee
             print(f"${self.balance:.2f}")
             return self
@@ -70,37 +70,172 @@ class BankAccount:
         # print(f"Balance of {cls.all_accounts}: ${cls.balance:.2f}")
         # return sum
 
+# class User:
+#     def __init__(self, name, email, account):
+#         self.name = name
+#         self.email = email
+#         self.account = account
+#         self.account = BankAccount(int_rate=0.02, balance=0)
+#         # account = self.account
+
+#     def make_deposit(self):
+#         # self.amount = amount
+#         # we can call the BankAccount instance's methods
+#         # self.amount = amount
+#         # self.account.deposit += amount
+#         # print(self.account.balance)		# or access its attributes
+#         # print(self.account)
+#         # print(self.amount)
+#         print(self)
+#         return self
+    
+#     def test(self, account):
+#         self.account = account
+#         print(self.account)
+#         return self
+
+# User.test()
+# print(User.make_deposit(50))
+
+
+class User:
+    def __init__(self, name, email):
+        self.name = name
+        self.email = email
+        # self.account = account
+        self.account = BankAccount(int_rate=0.02, balance=0)	# added this line
+        # account = self.account
+
+    def make_deposit(self, amount):
+        # we can call the BankAccount instance's methods
+        # self.amount = amount
+        self.account.deposit(amount)
+        # print(f"${self.account.balance}")
+        # self.account.balance += amount
+        # self.account.deposit(amount)
+        # print(self.email("Josh", "j"))
+        # print(self.amount)
+        # print(self.email)
+        # print(f"${self.account.balance:.2f}")
+        return self
+        # return self.amount # or access its attributes
+
+    def make_withdrawal(self, amount):
+        # self.amount = amount
+        self.account.withdraw(amount)
+        # print(f"${self.account.balance}")
+        # self.account.balance -= amount
+        # print(f"${self.account.balance:.2f}")
+        return self
+    
+    def display_user_balance(self):
+        self.account.balance
+        print(f"${self.account.balance}")
+        return self
+
+
 import random
 
 interest_percent = random.uniform(0,2)
 interest = interest_percent / 100
-# print(f"{interest_percent:.10f}")
 
 value = random.randrange(1000)
 
-
-
-
-
-# deposit = []
-# for i in 
-
-deposit_1 = random.randrange(100)
-deposit_2 = random.randrange(100)
-deposit_3 = random.randrange(100)
-withdraw_1 = random.randrange(100)
-withdraw_2 = random.randrange(100)
-withdraw_3 = random.randrange(100)
-withdraw_4 = random.randrange(100)
-account = BankAccount(interest, value)
+bank_account = BankAccount(interest, value)
 
 def randomize(num):
-    k = account.randomize(num)
+    k = bank_account.randomize(num)
     return k
 
-account.deposit(randomize(100)).deposit(randomize(100)).deposit(randomize(100)).withdraw(randomize(100)).yield_interest().display_account_info().all_balances()
+bank_account.deposit(randomize(100)).deposit(randomize(100)).deposit(randomize(100)).withdraw(randomize(100)).yield_interest().display_account_info().all_balances()
 
-account.deposit(randomize(100)).deposit(randomize(100)).withdraw(randomize(100)).withdraw(randomize(100)).withdraw(randomize(100)).withdraw(randomize(100)).yield_interest().display_account_info().all_balances()
+bank_account.deposit(randomize(100)).deposit(randomize(100)).withdraw(randomize(100)).withdraw(randomize(100)).withdraw(randomize(100)).withdraw(randomize(100)).yield_interest().display_account_info().all_balances()
+
+user_account = User("Josh", "fakeemail123@unreal.com")
+user_account.make_deposit(100)
+user_account.make_withdrawal(20)
+user_account.display_user_balance()
+
+
+# print(User(Josh, fakeemail123@unreal.com))
+
+# print(User.make_deposit(200))
+
+# print(User.make_deposit(200))
+
+# deposit = []
+# for i in
+
+# def iterate_deposits(n):
+#     d = []
+#     # x = []
+#     i = 1
+#     # j = 0
+#     for i in range(1, n+1):
+#         d.append(random.randrange(100))
+#         print(d[i-1])
+#         i += 1
+#     j = i
+#     for j in range(n+1, -1):
+#         print(j)
+
+
+# def iterate_withdrawals(n):
+#     w = {}
+#     i = 0
+#     for i in range(1, n+1):
+#         w[f"deposit_{i}"] = random.randrange(100)
+#         # print(w[f"deposit_{i}"])
+#         return(w[f"deposit_{i}"])
+
+
+# iterate_deposits(3)
+# print(d[range(10)])
+# while j < len(d):
+#     d[j]
+#     j += 1
+# i += 1
+# if i > n:
+#     break
+
+#     if d[i] == :
+
+#         l.pop(i)
+# else:
+#     i += 1
+
+# while i < (n + 1):
+# # for i in range(1,n+1):
+#     # if i == n - 1:
+#     d.append(random.randrange(100))
+#     # print(f"{d[f'deposit_{i}']}")
+#     # print(d)
+#     print(f"Making these deposits: {d}")
+#     i += 1
+#     if i == (n + 1):
+#         # for j in d:
+#         #         k = d[j]
+#         #         print(k)
+#         #         j += 1
+#                 # if j = i:
+#         break
+
+# total_deposit = sum(d)
+# print(d)
+# print(f"{d[0]}")
+# print(f"{total_deposit}")
+
+# print(i)
+# x = i
+# return i
+# else:
+# d[f"deposit_{i}"] = random.randrange(100)
+# print(d[f"deposit_{i}"])
+# print(i)
+# print(d)
+# print(d[f"deposit_{i}"])
+# print(x)
+# return(d[f"deposit_{i}"])
 
 # for i in deposit:
 #     if i < 3:
