@@ -1,0 +1,89 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* .even, .color1, div > .color1{
+    background-color: black;
+} */
+
+/* .odd, .color2{
+    color: red;
+    background-color: red;
+} */
+
+h2{
+    margin: 0 auto;
+}
+
+#box1{
+    width: fit-content;
+    padding: 1%;
+    margin: 2vh auto;
+}
+
+#box2{
+    width: fit-content;
+    height: fit-content;
+    /* height: 500px; */
+    margin: 0 auto;
+    /* display: flex; */
+}
+
+#largeBox{
+    width: 500px;
+    /* height: 500px; */
+    margin: 2vh auto;
+    /* display: flex; */
+}
+
+.cell{
+    width: 4vh;
+    height: 4vh;
+    margin: 0;
+    padding: 0;
+}
+
+#box2 > .row{
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    display: table-row;
+    vertical-align:top;
+    text-align:center;
+    left: 0;
+    /* top:0; */
+}
+
+/* .flex{
+    display: flex;
+} */
+
+.alignCenter{
+    align-items: center;
+}
+
+.flex{
+    display: flex;
+    justify-content: center;
+}
+
+table > tr > .column{
+    margin: 0;
+    padding: 0;
+    display:table-column;
+    vertical-align:top;
+    text-align:center;
+    left: 0;
+    /* top:top; */
+    /* align-items: baseline; */
+}
+/* 
+.row{
+    
+}
+
+.column{
+
+} */
