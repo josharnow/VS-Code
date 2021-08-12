@@ -1,0 +1,12 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.width{
+    width: fit-content;
+}
+
+.center{
+    margin: 0 auto;
+}

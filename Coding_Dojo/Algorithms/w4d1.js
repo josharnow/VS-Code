@@ -121,7 +121,6 @@ class SinglyLinkedList {
             runner = runner.next;
         }
 
-
         for (let runner = this.head; runner < this.tail; runner++) {
             if (this.head.next == this.tail) {
 
@@ -149,7 +148,21 @@ class SinglyLinkedList {
     }
 
     secondToLast() {
+
     }
+
+
+    moveMinToHead() {
+        let temp = this.findMinNode();
+        runner = this.head;
+        if this.head == temp {
+            return
+        }
+        
+    }
+    // min take to head
+    // max take to back
+
 }
 
 function generateNewList(length, min_value, max_value) {

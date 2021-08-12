@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Table</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<table class="table text-center table-sm width center">
+    <thead>
+        <tr class="table-primary">
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Full Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- {% for i in range(0, length) %}
+        <tr>
+            <td>{{ first_Name }}</td>
+            <td>{{ last_Name }}</td>
+            <td>{{ full_Name }}</td>
+        </tr>
+        {% endfor %} -->
+        {% for dict_item in users %}
+        <tr>
+            {% for key, value in dict_item.items() %}
+            <td>{{value}}</td>
+            {% endfor %}
+            <td>{{dict_item["first_name"]}} {{dict_item["last_name"]}}</td>
+        </tr>
+        {% endfor %}
+
+    </tbody>
+</table>
+<!-- 
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Full Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>Michael</td>
+            <td>Choi</td>
+            <td>@mdo</td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td></td>
+            <td>Thornton</td>
+            <td>@fat</td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td colspan="2">Larry the Bird</td>
+            <td>@twitter</td>
+        </tr>
+    </tbody>
+</table> -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

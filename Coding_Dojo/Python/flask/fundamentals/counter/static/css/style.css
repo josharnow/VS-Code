@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* body{
+    width: 100%;
+} */
+
+h1, h3{
+    text-align: center;
+    margin: 1vh auto;
+    justify-content: center;
+}
+
+.buttonDiv{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+button{
+    padding: 0.5em;
+    border-radius: 10%/100%;
+    color: gray;
+}
+
+#click{
+    background-color: blue;
+}
+
+#reset{
+    background-color: red;
+}
