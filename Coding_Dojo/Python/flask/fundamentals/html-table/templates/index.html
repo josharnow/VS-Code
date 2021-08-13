@@ -26,12 +26,11 @@
             <td>{{ full_Name }}</td>
         </tr>
         {% endfor %} -->
-        {% for dict_item in users %}
+        {% for user in users %}
         <tr>
-            {% for key, value in dict_item.items() %}
-            <td>{{value}}</td>
-            {% endfor %}
-            <td>{{dict_item["first_name"]}} {{dict_item["last_name"]}}</td>
+            <td>{{user["first_name"]}}</td>
+            <td>{{user["last_name"]}}</td>
+            <td>{{user["first_name"]}} {{user["last_name"]}}</td>
         </tr>
         {% endfor %}
 

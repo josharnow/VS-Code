@@ -9,12 +9,12 @@ def index():
         {'first_name': 'Mark', 'last_name': 'Guillen'},
         {'first_name': 'KB', 'last_name': 'Tonel'}
     ]
-    i = 0
-    while (i < len(users)):
-        print(users[i])
-        print(users[i]["first_name"])
-        print(users[i]["last_name"])
-        i += 1
+    # i = 0
+    # while (i < len(users)):
+    #     print(users[i])
+    #     print(users[i]["first_name"])
+    #     print(users[i]["last_name"])
+    #     i += 1
     length = len(users)
     # x = users['first_name']
     # y = users['last_name']
