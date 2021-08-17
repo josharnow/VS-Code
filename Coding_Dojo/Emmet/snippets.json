@@ -1,0 +1,20 @@
+{
+    "html": {
+        "snippets":{
+            "bu": "button[type][name][onclick]",
+            "button": "button[type][name][onclick]",
+            "bu:b": "button[type=button][name][onclick]",
+            "button:b": "button[type=button][name][onclick]",
+            "bu:s": "button[type=submit][name][onclick]",
+            "button:s": "button[type=submit][name][onclick]",
+            "bu:r": "button[type=reset][name][onclick]",
+            "button:r": "button[type=reset][name][onclick]",
+            "bu:d": "button[disabled=disabled][name][onclick]",
+            "button:d": "button[disabled=disabled][name][onclick]",
+            "inp": "input[type][class][name][onclick]",
+            "input": "input[type][class][name][onclick]",
+            "for": "form[action][target][method][id]",
+            "form": "form[action][target][method][id]"
+        }
+    }
+}

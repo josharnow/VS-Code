@@ -10,14 +10,12 @@
 </head>
 <body>
     <h1>Counter</h1>
-    <!-- <h1 class="bg-primary text-light text-center col-6 my-5 mx-auto">Counter</h1> -->
-    <h3>{{ session['count'] }} times</h3>
+    <h3>{{ counter }}</h3>
     <div class="buttonDiv">
-        <form action="/" method="get">
-        <!-- <form action="/increment" method="get"></form> -->
+        <form action="#" method="post">
             <button name="click" id="click">Click</button>
         </form>
-        <form action="/destroy_session" method="get">
+        <form action="/destroy_session" method="post">
             <button name="reset" id="reset">Reset</button>
         </form>
     </div>

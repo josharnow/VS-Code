@@ -1,0 +1,73 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    width: 100%;
+}
+
+.bigBox{
+    width: 75%;
+    border: 2px solid black;
+    margin: 3vh auto;
+    padding: 5%;
+}
+
+.formRow{
+    display: flex;
+    justify-content: space-between;
+    margin: 1vh auto;
+}
+
+.formInput{
+    width: 35vw;
+}
+
+/* div:last-child{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 1vh auto;
+} */
+
+#commentBox{
+    margin: 1vh auto 0;
+    width: 100%;
+    /* height: 20vh; */
+}
+
+#resultHeading{
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.flex{
+    display: flex;
+    justify-content: right;
+}
+
+/* h1, h3{
+    text-align: center;
+    margin: 1vh auto;
+    justify-content: center;
+}
+
+.buttonDiv{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+button{
+    padding: 0.5em;
+    border-radius: 10%/100%;
+    color: gray;
+}
+
+#click{
+    background-color: blue;
+}
+
+#reset{
+    background-color: red;
+} */

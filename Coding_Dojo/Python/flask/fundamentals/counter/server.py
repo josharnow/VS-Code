@@ -1,70 +1,48 @@
 from crypt import methods
-from flask import Flask, render_template, request, redirect, session, url_for
+from flask import Flask, render_template, redirect, session
+
 app = Flask(__name__)
+
 # set a secret key for security purposes
 app.secret_key = 'keep it secret, keep it safe'
 
-
-@app.route('/', methods=["POST", "GET"])
+@app.route('/')
 # request
 def index():
-    if request.method == "POST":
-        session["click"] = request.form["click"]
-        print(session)
-    # print(request.form.values)
-    if 'key_name' in session:
-        print('key exists!')
+    if "count" not in session:
+        session['count'] = 0
     else:
-        print("key 'key_name' does NOT exist")
-    
-
+        session['count'] += 1
     return render_template("index.html")
-    # count = 0
-    # if request.method == "POST":
-    #     session["click"] = request.form["click"]
-    #     x = session["click"]
-    #     return redirect (url_for("show", x=x))
-    # else:
-    #     # Here we add two properties to session to store the name and email
-    #     # session['click'] = request.form['click']
-    #     # session['useremail'] = request.form['email']
-    #     # if 'key_name' in session:
-    #     #     print('key exists!')
-    #     # else:
-    #     #     print("key 'key_name' does NOT exist")
-    #     return render_template("index.html", counter=count)
 
-
-@app.route('/count', methods=['POST'])
-# request
-def count():
-    # Here we add two properties to session to store the name and email
-    session['click'] += request.form['click']
-    # counter += 1
-    # x = session['click']
-    # print(session['click'])
-    # print(request.form['click'])
-    # session['useremail'] = request.form['email']
-    # if 'key_name' in session:
-    #     print('key exists!')
-    # else:
-    #     print("key 'key_name' does NOT exist")
-    return redirect('/show')
-
-
-@app.route('/show')
-def show(x):
-    # x = count.x
-    return render_template('index.html', counter=x)
-
-
-@app.route('/destroy_session', methods=['POST'])
+@app.route('/destroy_session')
 def reset():
-    request.form['reset'] = session.clear()
-    # session.clear()		# clears all keys
-    session.pop('key_name')		# clears a specific key
+    session.clear()
     return redirect('/')
-
 
 if __name__ == "__main__":
     app.run(debug=True)
+
+# @app.route('/')
+# # request
+# def index():
+#     if "count" not in session and "temp" not in session:
+#         session['count'] = 0
+#         session['temp'] = 0
+#     elif session['temp'] == 0:  # allows for counter to go up on page refresh
+#         session['count'] += 1
+#     # print(session['temp'])
+#     # print(session['count'])
+#     session['temp'] = 0
+#     return render_template("index.html")
+
+
+# @app.route('/increment')
+# def increment():
+#     # print(session['temp'])
+#     session['count'] += 1  # allows for counter to go up on button click
+#     session['temp'] += 1
+#     return redirect('/')
+
+# @app.route('/destroy_session', methods=['POST'])
+    # def reset():

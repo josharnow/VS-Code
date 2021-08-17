@@ -64,7 +64,6 @@ class SinglyLinkedList {
             }
             runner = runner.next;
         }
-
         return false;
     }
 

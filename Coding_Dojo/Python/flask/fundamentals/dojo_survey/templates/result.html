@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojo Survey Result</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <form action="/back" target="" method="" id="" class="bigBox">
+        <p id="resultHeading">Submitted Info</p>
+        <div class="resultDiv">
+            <p class="resultRow">Name: </p>
+            <p class="resultRow">{{session["name"]}}</p>
+        </div>
+        <div class="resultDiv">
+            <p class="resultRow">Dojo Location: </p>
+            <p class="resultRow">{{session["location"]}}</p>
+        </div>
+        <div class="resultDiv">
+            <p class="resultRow">Favorite Language: </p>
+            <p class="resultRow">{{session["favorite"]}}</p>
+        </div>
+        <div class="resultDiv">
+            <p class="resultRow">Comment: </p>
+            <p class="resultRow">{{session["comment"]}}</p>
+        </div>
+
+        <button type="" name="goBack" onclick="">Go Back</button><!-- /$goBack -->
+    </form><!-- /.bigBox -->
+<script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

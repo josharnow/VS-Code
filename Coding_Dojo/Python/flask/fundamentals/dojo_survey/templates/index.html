@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>>Dojo Survey Index</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <form action="/process" class="bigBox" method="POST">
+        <div class="formRow">
+            <p>Your Name: </p>
+            <input type="text" class="formInput" name="name" onclick=""></input>
+        </div>
+        <div class="formRow">
+            <p>Dojo Location: </p>
+            <select name="location" id="location" class="formInput">
+                <option value="Chicago">Chicago</option>
+                <option value="Seattle">Seattle</option>
+                <option value="Online">Online</option>
+                <option value="Burbank">Burbank</option>
+                <option value="Bellevue">Bellevue</option>
+            </select>
+        </div>
+        <div class="formRow">
+            <p>Favorite Language: </p>
+                <select name="favorite" id="favorite" class="formInput">
+                    <option value="HTML">HTML</option>
+                    <option value="CSS">CSS</option>
+                    <option value="JavaScript">JavaScript</option>
+                    <option value="Python">Python</option>
+                    <option value="C#">C#</option>
+                </select>
+        </div>
+        <p>Comment (optional): </p>
+        <textarea name="comment" id="commentBox" cols="30"
+        rows="10"></textarea>
+        <div class="flex">
+            <button name="submit" type="submit">Submit</button>
+        </div>
+    </form>
+<script type="text/javascript" src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
