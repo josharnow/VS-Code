@@ -12,8 +12,8 @@ class User:
     @classmethod
     def save(cls, data):
         query = "Insert INTO users (first_name,last_name,email,created_at,update_at) VALUES(%(first_name)s,%(last_name)s,%(email)s,NOW(),NOW());"
-        user_id = connectToMySQL('users_schema').query_db(query, data)
-        return user_id
+        result = connectToMySQL('users_schema').query_db(query, data)
+        return result
 
     @classmethod
     def get_all(cls):
