@@ -23,3 +23,19 @@ class User:
         for u in users_from_db:
             users.append(cls(u))
         return users
+
+    @classmethod
+    def get_one(cls, data):
+        query = "SELECT * FROM users WHERE users.id = %(id)s;"
+        user_from_db = connectToMySQL('users_schema').query_db(query, data)
+        return cls(user_from_db[0])
+
+    @classmethod
+    def update(cls, data):
+        query = "UPDATE users SET first_name=%(first_name)s, last_name=%(last_name)s, email=%(email)s, update_at = NOW() WHERE id = %(id)s;"
+        return connectToMySQL('users_schema').query_db(query, data)
+
+    @classmethod
+    def destroy(cls, data):
+        query = "DELETE FROM users WHERE id = %(id)s;"
+        return connectToMySQL('users_schema').query_db(query, data)
