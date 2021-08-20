@@ -47,6 +47,9 @@ body{
     justify-content: right;
 }
 
+.resultDiv{
+    display: flex;
+}
 /* h1, h3{
     text-align: center;
     margin: 1vh auto;

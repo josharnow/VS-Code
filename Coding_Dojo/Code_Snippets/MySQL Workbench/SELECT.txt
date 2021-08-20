@@ -1,0 +1,3 @@
+-- The SQL command pattern for SELECTing records is as follows: --
+
+SELECT column_name FROM table_name
