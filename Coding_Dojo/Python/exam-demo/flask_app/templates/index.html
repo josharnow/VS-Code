@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            <p>{{message}}</p>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+    <div class="flex flexSpread">
+        <form action="/users/register" method="POST" class="leftColumn">
+            <h1>Register</h1>
+
+            <label for="first_name">First name:</label>
+                <!-- <br> -->
+            <input type="text" name="first_name" id="">
+                <br>
+                
+            <label for="last_name">Last name:</label>
+                <!-- <br> -->
+            <input type="text" name="last_name" id="">
+                <br>
+
+            <label for="nickname">Nickname:</label>
+                <!-- <br> -->
+            <input type="text" name="nickname" id="">
+                <br>
+
+            <label for="email">Email:</label>
+                <!-- <br> -->
+            <input type="email" name="email" id="">
+                <br>
+
+            <label for="password">Password:</label>
+                <!-- <br> -->
+            <input type="password" name="password" id="">
+                <br>
+
+            <label for="confirm_password">Confirm Password:</label>
+                <!-- <br> -->
+            <input type="password" name="confirm_password" id="">
+                <br>
+
+            <button type="submit">Register</button>
+        </form>
+        <form action="/users/login" method="POST" class="rightColumn">
+            <h1>Login</h1>
+            <label for="email">Email:</label>
+                <!-- <br> -->
+            <input type="email" name="email" id="">
+                <br>
+
+            <label for="password">Password:</label>
+                <!-- <br> -->
+            <input type="password" name="password" id="">
+                <br>
+
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Hey {{session['user_nickname']}}, these are some shows in your area <a href='/shows/new'>Create a new show</a></p>
+
+    <table>
+        <thead>
+            <th>Name</th>
+            <th>Date</th>
+            <th>Actions</th>
+        </thead>
+        <tbody>
+            {% for show in shows %}
+            <tr>
+                <td>{{show.name}}</td>
+                <td>{{show.date}}</td>
+                <td><a href='/shows/{{show.id}}'>View</a>{% if show.user.id == session['user_id'] %}<a href='/shows/{{show.id}}/edit'>Edit</a> <a href='/shows/{{show.id}}/delete'>Delete</a>{% endif %}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

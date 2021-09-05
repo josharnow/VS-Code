@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read (One)</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>User {{ user['id'] }}</h1>
+    <a href="/users">Home</a>
+    <div class="box">
+        <h2>Full Name: {{ user['first_name'] }} {{user['last_name'] }}</h2>
+        <h2>Email: {{user['email']}}</h2>
+        <h2>Created On: {{user['created_at']}}</h2>
+        <h2>Last Updated: {{user['update_at']}}</h2>
+    </div>
+    <a href="/edit_page/{{ user['id'] }}">Edit</a> | 
+    <a href="/delete/{{ user['id'] }}">Delete</a>
+</body>
+</html>

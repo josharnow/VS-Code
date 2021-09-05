@@ -95,3 +95,49 @@ Coding_Dojo/Python/Belt-Exam/img/assets/sedum-s.jpg
 Coding_Dojo/Python/Belt-Exam/img/assets/sempervivum-s.jpg
 Coding_Dojo/Python/Belt-Exam/img/assets/succulents-1.jpg
 Coding_Dojo/Python/Belt-Exam/img/assets/succulents-2.jpg
+Coding_Dojo/Python/Belt-Exam.zip
+Coding_Dojo/Python/Belt-Exam/Pipfile
+Coding_Dojo/Python/Belt-Exam/Pipfile.lock
+Coding_Dojo/Python/Belt-Exam/server.py
+Coding_Dojo/Python/Belt-Exam/users_and_paintings.mwb
+Coding_Dojo/Python/Belt-Exam/flask_app/__init__.py
+Coding_Dojo/Python/Belt-Exam/flask_app/config/mysqlconnection.py
+Coding_Dojo/Python/Belt-Exam/flask_app/controllers/paintings.py
+Coding_Dojo/Python/Belt-Exam/flask_app/controllers/users.py
+Coding_Dojo/Python/Belt-Exam/flask_app/models/painting.py
+Coding_Dojo/Python/Belt-Exam/flask_app/models/user.py
+Coding_Dojo/Python/Belt-Exam/flask_app/static/css/style.css
+Coding_Dojo/Python/Belt-Exam/flask_app/templates/confirm_delete.html
+Coding_Dojo/Python/Belt-Exam/flask_app/templates/dashboard.html
+Coding_Dojo/Python/Belt-Exam/flask_app/templates/edit_painting.html
+Coding_Dojo/Python/Belt-Exam/flask_app/templates/index.html
+Coding_Dojo/Python/Belt-Exam/flask_app/templates/new_painting.html
+Coding_Dojo/Python/Belt-Exam/flask_app/templates/painting_data.html
+Coding_Dojo/Python/flask_mysql/crud/Users CRUD Modularized/TEMP/burgers/burgers_erd.mwb
+Coding_Dojo/Python/flask_mysql/crud/Users CRUD Modularized/TEMP/burgers/burgers_erd.mwb.bak
+Coding_Dojo/Python/flask_mysql/crud/Users CRUD Modularized/TEMP/burgers/Pipfile
+Coding_Dojo/Python/flask_mysql/crud/Users CRUD Modularized/TEMP/burgers/Pipfile.lock
+Coding_Dojo/Python/flask_mysql/crud/Users CRUD Modularized/TEMP/burgers/server.py
+Coding_Dojo/Python/flask_mysql/crud/Users CRUD Modularized/TEMP/burgers/flask_app/__init__.py
+Coding_Dojo/Python/flask_mysql/crud/Users CRUD Modularized/TEMP/burgers/flask_app/config/mysqlconnection.py
+Coding_Dojo/Python/flask_mysql/crud/Users CRUD Modularized/TEMP/burgers/flask_app/controllers/burgers.py
+Coding_Dojo/Python/flask_mysql/crud/Users CRUD Modularized/TEMP/burgers/flask_app/models/burger.py
+Coding_Dojo/Python/flask_mysql/crud/Users CRUD Modularized/TEMP/burgers/flask_app/static/css/style.css
+Coding_Dojo/Python/flask_mysql/crud/Users CRUD Modularized/TEMP/burgers/flask_app/templates/details_page.html
+Coding_Dojo/Python/flask_mysql/crud/Users CRUD Modularized/TEMP/burgers/flask_app/templates/edit_page.html
+Coding_Dojo/Python/flask_mysql/crud/Users CRUD Modularized/TEMP/burgers/flask_app/templates/index.html
+Coding_Dojo/Python/flask_mysql/crud/Users CRUD Modularized/TEMP/burgers/flask_app/templates/results.html
+Coding_Dojo/Python/flask_mysql/crud/Users CRUD Modularized/TEMP/burgers/burgers_erd.mwb
+Coding_Dojo/Python/flask_mysql/crud/Users CRUD Modularized/TEMP/burgers/burgers_erd.mwb.bak
+Coding_Dojo/Python/flask_mysql/crud/Users CRUD Modularized/TEMP/burgers/Pipfile
+Coding_Dojo/Python/flask_mysql/crud/Users CRUD Modularized/TEMP/burgers/Pipfile.lock
+Coding_Dojo/Python/flask_mysql/crud/Users CRUD Modularized/TEMP/burgers/server.py
+Coding_Dojo/Python/flask_mysql/crud/Users CRUD Modularized/TEMP/burgers/flask_app/__init__.py
+Coding_Dojo/Python/flask_mysql/crud/Users CRUD Modularized/TEMP/burgers/flask_app/config/mysqlconnection.py
+Coding_Dojo/Python/flask_mysql/crud/Users CRUD Modularized/TEMP/burgers/flask_app/controllers/burgers.py
+Coding_Dojo/Python/flask_mysql/crud/Users CRUD Modularized/TEMP/burgers/flask_app/models/burger.py
+Coding_Dojo/Python/flask_mysql/crud/Users CRUD Modularized/TEMP/burgers/flask_app/static/css/style.css
+Coding_Dojo/Python/flask_mysql/crud/Users CRUD Modularized/TEMP/burgers/flask_app/templates/details_page.html
+Coding_Dojo/Python/flask_mysql/crud/Users CRUD Modularized/TEMP/burgers/flask_app/templates/edit_page.html
+Coding_Dojo/Python/flask_mysql/crud/Users CRUD Modularized/TEMP/burgers/flask_app/templates/index.html
+Coding_Dojo/Python/flask_mysql/crud/Users CRUD Modularized/TEMP/burgers/flask_app/templates/results.html

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a New Show</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Create a new show!</h1>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <p>{{message}}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <form action="/shows/create" class="" method="POST">
+        <label for="name">Name:</label>
+            <!-- <br> -->
+        <input type="text" name="name">
+            <br>
+
+        <label for="date">Date:</label>
+            <!-- <br> -->
+        <input type="date" name="date">
+            <br>
+
+        <label for="description">Description:</label>
+            <!-- <br> -->
+        <textarea name="description" id="" cols="30" rows="10"></textarea>
+            <br>
+
+        <label for="max_attendees">Maximum attendees:</label>
+            <!-- <br> -->
+        <input type="number" name="max_attendees">
+            <br>
+
+        <button type="submit">Save</button>
+    </form>
+</body>
+</html>

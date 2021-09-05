@@ -1,0 +1,18 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+table{
+    border: 1px solid black;
+    text-align: center;
+}
+
+.box{
+    border: 1px solid black;
+    width: fit-content;
+}
+
+.flex{
+    display: flex;
+}

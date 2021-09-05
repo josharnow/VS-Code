@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% for show in shows %}
+    <title>{{show.name}} on {{show.date}}</title>
+    {% endfor %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    {% for show in shows %}
+    {% for user in users %}
+        <p>{{show.name}} - Created by: {{user.id}}</p>
+    {% endfor %}
+        <p>{{show.date}}</p>
+        <p>Description: {{show.description}}</p>
+        {% if show.user_id == session['user_id'] %}
+            <a href='/shows/{{show.id}}/edit'>Edit</a>
+            <a href='/shows/{{show.id}}/delete'>Delete</a>
+        {% endif %}
+    {% endfor %}
+    {% for show in shows %}
+                {% if show.user_id == session['user_id'] %}
+                <tr>
+                    <td>{{show.name}}</td>
+                    <td>{{show.date}}</td>
+                    <td>
+                        <a href='/shows/{{show.id}}'>View</a>
+                        <a href='/shows/{{show.id}}/edit'>Edit</a>
+                        <a href='/shows/{{show.id}}/delete'>Delete</a>
+                        {% if show.user_id != session['user_id'] %}
+                        
+                            <a href="/shows/<int:id>/attend">Attend</a>
+                        {% endif %}
+                        {% if show.user_id != session['user_id'] %}
+                            <a href="/shows/<int:id>/unattend">Unattend</a>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endif %}
+            {% endfor %}
+        </tbody>
+    </table>
+            {% for show in shows %}
+                {% if show.user_id == session['user_id'] %}
+                <tr>
+                    <td>{{show.name}}</td>
+                    <td>{{show.date}}</td>
+                    <td>
+                        <a href='/shows/{{show.id}}'>View</a>
+                        <a href='/shows/{{show.id}}/edit'>Edit</a>
+                        <a href='/shows/{{show.id}}/delete'>Delete</a>
+                        {% if show.user_id != session['user_id'] %}
+                        
+                            <a href="/shows/<int:id>/attend">Attend</a>
+                        {% endif %}
+                        {% if show.user_id != session['user_id'] %}
+                            <a href="/shows/<int:id>/unattend">Unattend</a>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endif %}
+            {% endfor %}
+        </tbody>
+    </table>
+    {% for show in shows %}
+    <a href="/shows/{{show.id}}"><button>View</button></a>
+    <a href="/shows/{{show.id}}/edit"><button>Edit</button></a>
+    <a href="/shows/{{show.id}}/delete"><button>Delete</button></a>
+    
+
+    {% if show.user_id == session['user_id'] %}
+    <tr>
+        <td>{{show.name}}</td>
+        <td>{{show.date}}</td>
+        <td>
+            <a href='/shows/{{show.id}}'>Attend</a>
+            <a href='/shows/{{show.id}}'>Unattend</a>
+
+            <a href='/shows/{{show.id}}/edit'>Edit</a>
+            <a href='/shows/{{show.id}}/delete'>Delete</a>
+            {% if show.user_id != session['user_id'] %}
+    
+            <a href="/shows/<int:id>/attend">Attend</a>
+            {% endif %}
+            {% if show.user_id != session['user_id'] %}
+            <a href="/shows/<int:id>/unattend">Unattend</a>
+            {% endif %}
+        </td>
+    </tr>
+    {% endif %}
+    {% endfor %}
+    </tbody>
+    </table>
+</body>
+</html>
