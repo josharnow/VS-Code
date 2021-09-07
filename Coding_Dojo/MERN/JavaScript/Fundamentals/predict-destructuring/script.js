@@ -15,7 +15,7 @@ const employee = {
 }
 const { name: otherName } = employee;
 //Predict the output
-console.log(name); // ReferenceError: Can't find variable "name"
+console.log(name); // "result"
 console.log(otherName); // "Elon"
 
 // Problem 3
