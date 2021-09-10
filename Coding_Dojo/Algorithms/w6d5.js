@@ -27,7 +27,6 @@ function binarySearch(input, target, startpoint = 0, endpoint = input.length - 1
     if (input[middle] < target) {
         return binarySearch(input, target, middle + 1, endpoint)
     }
-
 }
 
 var testArray = [1, 2, 4, 5, 6, 7, 8, 10, 11, 13, 14, 16, 17, 18, 20];

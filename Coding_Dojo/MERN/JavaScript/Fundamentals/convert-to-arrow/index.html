@@ -20,11 +20,31 @@
     <p>
         We just like random interactivity in the site, including a fun effect if you hover over <span id="hover-this">        <b>this.</b></span>
     </p>
-    <p onmouseover="mouseOverFunction(this)">
+    <p onmouseover="mouseOverFunction(this)" id="paragraph-2"> <!-- Option 1 --> 
+    <!-- <p onmouseover="mouseOverFunction(this)" onclick="clickFunction(this)"> --> <!-- Option 2 -->
         Another task: This should be another feature. 
-        I want to click anywhere in this paragraph tag and I want to be able to change the background color to whatever is in this input: <input type="text"/>.
+        I want to click anywhere in this paragraph tag and I want to be able to
+        change the background color to whatever is in this input:
+        <input type="text" id="color-input" />.
     </p>
     <script>
+        document.getElementById("button").onclick = () => setBackgroundColorById("paragraph", "blue");
+        // The Document method getElementById() returns an Element object representing the element whose id property matches the specified string.
+        document.getElementById("alert").onclick = () => alert(document.getElementById("popup-input").value);
+        document.getElementById("hover-this").onmouseover = () => setBackgroundColorById("body", "red");
+        document.getElementById("hover-this").onmouseout = () => setBackgroundColorById("body", "white");
+        document.getElementById("paragraph-2").onclick = () => setBackgroundColorById("paragraph-2", getValueFromId("color-input")); // Option 1
+
+        const getValueFromId = id => document.getElementById(id).value;
+        const setBackgroundColorById = (id, color) => document.getElementById(id).style = "background-color: " + color;
+        const mouseOverFunction = el => el.style = "background-color: black";
+        // const clickFunction = el => el.style = "background-color: " + getValueFromId("color-input"); // Option 2
+        
+
+        // document.getElementById("paragraph").onclick = setBackgroundColorById(id, color)
+
+        // document.getElementById("paragraph").addEventListener("click", setBackgroundColorById(id, color));
+        
         // document.getElementById("button").onclick = function() {
         //     setBackgroundColorById("paragraph", "blue");
         // }
@@ -46,13 +66,14 @@
         // function mouseOverFunction(el){
         //     el.style = "background-color: black";
         // }
-        document.getElementById("button").onclick = () => setBackgroundColorById("paragraph", "blue");
-        document.getElementById("alert").onclick = () => alert(document.getElementById("popup-input").value);
-        document.getElementById("hover-this").onmouseover = () => setBackgroundColorById("body", "red");
-        document.getElementById("hover-this").onmouseout = () => setBackgroundColorById("body", "white");
-        let getValueFromId = id => document.getElementById(id).value;
-        let setBackgroundColorById = (id, color) => document.getElementById(id).style = "background-color: " + color;
-        let mouseOverFunction = el => el.style = "background-color: black";
     </script>
 </body>
 </html>
+
+{% with messages = get_flashed_messages() %}<!-- declare a variable called messages -->
+    {% if messages %}<!-- check if there are any messages -->
+        {% for message in messages %}<!-- loop through the messages -->
+            <p>{{message}}</p><!-- display each message in a paragraph tag -->
+        {% endfor %}
+    {% endif %}
+{% endwith %}
