@@ -6,10 +6,9 @@ class Ninja {
         this.strength = strength;
     }
 
-    sayName() {
+    sayName() { // As an arrow function: sayName = () => console.log(`${this.name}`);
         console.log(`${this.name}`);
     }
-    // As arrow function: sayName = () => console.log(`${this.name}`);
 
     showStats() {
         console.log(`Name: ${this.name}`);
@@ -26,9 +25,10 @@ class Ninja {
     }
 }
 
-const ninja1 = new Ninja("Hyabusa");
+const ninja1 = new Ninja("Hyabusa", 10);
 ninja1.sayName();
 ninja1.showStats();
+ninja1.drinkSake();
 ninja1.drinkSake();
 
 // Create a Ninja class
