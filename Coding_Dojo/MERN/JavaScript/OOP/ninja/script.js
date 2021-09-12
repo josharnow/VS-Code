@@ -25,11 +25,16 @@ class Ninja {
     }
 }
 
+
 const ninja1 = new Ninja("Hyabusa", 10);
 ninja1.sayName();
 ninja1.showStats();
 ninja1.drinkSake();
 ninja1.drinkSake();
+
+// export default { Ninja };
+// module.exports = Ninja;
+
 
 // Create a Ninja class
 // add an attribute: name

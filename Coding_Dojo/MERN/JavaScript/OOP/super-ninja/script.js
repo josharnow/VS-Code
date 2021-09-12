@@ -1,4 +1,5 @@
-// import { Ninja } from '../ninja/script.js'
+// const Ninja = require('../ninja/script.js');
+// import { Ninja } from '../ninja/script.js';
 
 class Ninja { // Parent class Ninja
     constructor(name, health, speed = 3, strength = 3) {
