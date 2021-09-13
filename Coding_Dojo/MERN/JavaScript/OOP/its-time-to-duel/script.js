@@ -76,7 +76,6 @@ pairProgramming.play(rbNinja);
 
 rbNinja.attack(bbNinja);
 
-
 // rbNinja.showStats();
 // bbNinja.showStats();
 // hardAlgorithm.showStats();
