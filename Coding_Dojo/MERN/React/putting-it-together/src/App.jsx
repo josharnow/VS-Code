@@ -1,4 +1,3 @@
-// import logo from './logo.svg';
 import './App.css';
 import PersonCard from './components/PersonCard';
 
@@ -20,8 +19,8 @@ function App() {
       <PersonCard lastName={"Fillmore"} firstName={"Millard"} age={50} hairColor={"Brown"} />
       <PersonCard lastName={"Smith"} firstName={"Maria"} age={62} hairColor={"Brown"} /> */}
       
-      {peopleArr.map(person => {
-        return <PersonCard firstName={person.firstName} lastName={person.lastName} age={person.age} hairColor={person.hairColor} />
+      {peopleArr.map((person, key) => {
+        return <PersonCard firstName={person.firstName} lastName={person.lastName} age={person.age} hairColor={person.hairColor} key={key} /> // "key" was added to address following error: "Warning: Each child in a list should have a unique "key" prop."
       })}
     </div>
   );
