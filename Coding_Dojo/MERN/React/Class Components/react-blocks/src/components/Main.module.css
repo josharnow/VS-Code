@@ -1,0 +1,12 @@
+.box {
+  background-color: #e06666;
+  border: 1px solid black;
+  margin: 0 2.5% 2.5% 0;
+  height: fit-content;
+  width: 100%;
+  /* z-index: 2 */
+}
+
+.flex {
+  display: flex;
+}

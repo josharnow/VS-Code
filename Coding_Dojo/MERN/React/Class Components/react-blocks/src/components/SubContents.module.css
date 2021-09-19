@@ -1,0 +1,8 @@
+.box {
+  background-color: #ffd966;
+  border: 1px solid black;
+  margin: 2.5%;
+  height: 33vh;
+  width: 100%;
+  /* z-index: 3 */
+}

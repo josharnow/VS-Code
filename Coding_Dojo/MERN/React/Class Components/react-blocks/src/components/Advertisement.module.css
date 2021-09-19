@@ -1,0 +1,7 @@
+.box {
+  background-color: #b4a7d6;
+  border: 1px solid black;
+  margin: 0 2.5% 2.5% 2.5%;
+  height: 24vh;
+  /* z-index: 3 */
+}
