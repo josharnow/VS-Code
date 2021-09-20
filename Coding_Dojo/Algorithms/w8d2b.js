@@ -22,3 +22,5 @@ const insertionSort = (arr) => {
 }
 
 console.log(insertionSort([6, 4, 5, 2, 8, 14, 1, 3]));
+
+div_ 
