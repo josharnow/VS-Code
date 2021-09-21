@@ -12,8 +12,10 @@ import FormData from './components/FormData';
 
 // console.log(`${firstName}`)
 // let data = [
-  // { "firstName": { firstName }, "lastName": { lastName }, "email": { email }, "password": { password }, "confirmPassword": {confirmPassword } }
+//   { "firstName": { firstName }, "lastName": { lastName }, "email": { email }, "password": { password }, "confirmPassword": {confirmPassword } }
 // ]
+
+const data = UserForm["firstName"];
 
 
 // {newUser}
@@ -23,6 +25,7 @@ function App() {
       <div className="App">
         <UserForm />
         <FormData />
+        {console.log(data)}
       </div>
 
   );

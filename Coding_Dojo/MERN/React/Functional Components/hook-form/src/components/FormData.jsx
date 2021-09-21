@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import UserForm from './UserForm';
+// import UserForm from './UserForm';
 
 const FormData = (props) => {
 
@@ -15,12 +15,12 @@ const FormData = (props) => {
         <p>{ props.lastName }</p>
       </div>
       <div>
-        <p>Last Name</p>
-        <p>{ props.lastName }</p>
+        <p>Email</p>
+        <p>{ props.email}</p>
       </div>
       <div>
-        <p>Last Name</p>
-        <p>{ props.lastName }</p>
+        <p>Password</p>
+        <p>{ props.password }</p>
       </div>
       <div>
         <p>Confirm Password</p>
