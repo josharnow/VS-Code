@@ -9,7 +9,7 @@ export default function Pokemon() {
   
   const onSubmitHandler = e => {
     e.preventDefault();
-    axios.get("https://pokeapi.co/api/v2/pokemon")
+    axios.get("https://pokeapi.co/api/v2/pokemon?limit=807")
       .then(res => {
         console.log(res.data.results);
         setPokemon(res.data.results);
