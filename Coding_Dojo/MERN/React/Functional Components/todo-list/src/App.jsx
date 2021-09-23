@@ -10,9 +10,7 @@ function App() {
   const handleSubmit = e => {
     e.preventDefault();
 
-    if (newItem.length === 0) {
-      return;
-    }
+    if (newItem.length === 0) return;
 
     const listItem = {
       text: newItem,
@@ -56,6 +54,7 @@ function App() {
         </div>
       </form>
 
+      <hr />
 
       {List.map((item, i) => {
         return (
@@ -72,5 +71,4 @@ function App() {
     </div>
   );
 }
-
 export default App;
