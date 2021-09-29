@@ -34,7 +34,7 @@ public class CafeJava {
     System.out.println(generalGreeting + customer1); // Displays "Welcome to Cafe Java, Cindhuri"
     if (isReadyOrder1) {
       System.out.println(customer1 + readyMessage);
-      System.out.println(displayTotalMessage + String.format("%.2f", total));
+      System.out.println(String.format("%s%.2f", displayTotalMessage, total));
     } else {
       System.out.println(customer1 + pendingMessage);
     }
@@ -44,14 +44,14 @@ public class CafeJava {
     isReadyOrder4 = true;
     if (isReadyOrder4) {
       System.out.println(customer4 + readyMessage);
-      System.out.println(displayTotalMessage + String.format("%.2f", total));
+      System.out.println(String.format("%s%.2f", displayTotalMessage, total));
     } else {
       System.out.println(customer4 + pendingMessage);
     }
 
     total = lattePrice * 2;
     System.out.println(generalGreeting + customer2);
-    System.out.println(displayTotalMessage + String.format("%.2f", total));
+    System.out.println(String.format("%s%.2f", displayTotalMessage, total));
     isReadyOrder2 = true;
     if (isReadyOrder2) {
       System.out.println(customer2 + readyMessage);
@@ -60,7 +60,7 @@ public class CafeJava {
     }
 
     total = lattePrice - dripCoffeePrice;
-    System.out.println(displayTotalMessage + total);
+    System.out.println(String.format("%s%.2f, %s.", displayTotalMessage, total, customer3));
   }
 }
 
