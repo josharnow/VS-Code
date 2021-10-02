@@ -1,7 +1,7 @@
-import java.util.ArrayList;
+// import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Iterator;
-import java.lang.Character;
+// import java.util.Iterator;
+// import java.lang.Character;
 import java.util.Random;
 public class PuzzleJava {
   /**
