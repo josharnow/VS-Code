@@ -101,7 +101,7 @@ public class CafeUtil {
     
     System.out.println("Please enter each customer name. Click return on your keyboard to move to the next customer for entry; type \"q\" and return to complete entries.");
     
-    while (customerList.indexOf("q") == -1) {
+        while (customerList.indexOf("q") == -1) { // Alternative approaches are possible
       customerList.add(System.console().readLine());
     }
     

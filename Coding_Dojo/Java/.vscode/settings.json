@@ -3,8 +3,9 @@
     "Java Foundations/fundamentals/type-casting",
     "Java Foundations/fundamentals/greetings",
     "Java Foundations/fundamentals/first-java-program",
+    "Java Foundations/fundamentals/cafe-business-logic",
     "Java Foundations/fundamentals/alfred-bot",
-    "Java Foundations/fundamentals/cafe-business-logic"
+    "Java Foundations/fundamentals/puzzling"
   ],
   "java.dependency.packagePresentation": "hierarchical"
 }
