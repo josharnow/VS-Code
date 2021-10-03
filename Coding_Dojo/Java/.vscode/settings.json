@@ -2,12 +2,13 @@
   "java.project.sourcePaths": [
     "Java Foundations/fundamentals/type-casting",
     "Java Foundations/fundamentals/puzzling",
+    "Java Foundations/fundamentals/map-of-the-hashmatique",
     "Java Foundations/fundamentals/hash-map",
     "Java Foundations/fundamentals/greetings",
     "Java Foundations/fundamentals/first-java-program",
     "Java Foundations/fundamentals/cafe-business-logic",
     "Java Foundations/fundamentals/alfred-bot",
-    "Java Foundations/fundamentals/map-of-the-hashmatique"
+    "Java Foundations/fundamentals/list-of-exceptions"
   ],
   "java.dependency.packagePresentation": "hierarchical"
 }
