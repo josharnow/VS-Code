@@ -19,6 +19,7 @@ public class BankAccount {
     checkingBalance = 0;
     savingsBalance = 0;
     accountNumber = BankAccount.generateRandomAccountNum();
+    // accountNumber = BankAccount.generateRandomAccountNum(9);
     ++numOfAccounts;
   }
 
@@ -33,6 +34,7 @@ public class BankAccount {
     this.checkingBalance = checkingBalance;
     this.savingsBalance = savingsBalance;
     accountNumber = BankAccount.generateRandomAccountNum();
+    // accountNumber = BankAccount.generateRandomAccountNum(9);
     ++numOfAccounts; // Increments the numOfAccounts count
   }
 
@@ -53,6 +55,7 @@ public class BankAccount {
       savingsBalance = initialBalance;
     }
     accountNumber = BankAccount.generateRandomAccountNum();
+    // accountNumber = BankAccount.generateRandomAccountNum(9);
     ++numOfAccounts; // Increments the numOfAccounts count
   }
 
@@ -89,7 +92,7 @@ public class BankAccount {
    * @return The grand total balance of an account (i.e. checking balance + savings balance) [double]
    */
   public double getGrandTotalBalance() {
-    return this.checkingBalance + this.savingsBalance;
+    return checkingBalance + savingsBalance;
   }
 
   /**
@@ -97,7 +100,7 @@ public class BankAccount {
    * @return The account number associated with the account [int]
    */
   public int getAccountNum() {
-    return this.accountNumber;
+    return accountNumber;
   }
 
   //SETTERS
@@ -106,7 +109,7 @@ public class BankAccount {
    * @param checkingBalance Value to set the checking account balance to
    */
   public void setCheckingBalance(double checkingBalance) {
-    this.checkingBalance = checkingBalance;
+    this.checkingBalance = checkingBalance; // When the name assigned to the current object (within the context of an instance method or constructor) is identical to the name assigned to a parameter, appending the "this" keyword is REQUIRED. Otherwise, appending "this" is optional. 
   }
 
   /**
@@ -114,7 +117,7 @@ public class BankAccount {
    * @param savingsBalance Value to set the savings account balance to
    */
   public void setSavingsBalance(double savingsBalance) {
-    this.savingsBalance = savingsBalance;
+    this.savingsBalance = savingsBalance; // When the name assigned to the current object (within the context of an instance method or constructor) is identical to the name assigned to a parameter, appending the "this" keyword is REQUIRED. Otherwise, appending "this" is optional. 
   }
 
   /**
@@ -124,9 +127,9 @@ public class BankAccount {
    */
   public void depositUSD(String accountType, double amount) {
     if (accountType.equals("checking")) {
-      this.setCheckingBalance(this.checkingBalance + amount); 
+      this.setCheckingBalance(checkingBalance + amount); 
     } else if (accountType.equals("savings")) {
-      this.setSavingsBalance(this.savingsBalance + amount); 
+      this.setSavingsBalance(savingsBalance + amount); 
     }
   }
 
@@ -138,18 +141,18 @@ public class BankAccount {
    */
   public void withdrawUSD(String accountType, double amount) {
     if (accountType.equals("checking")) {
-      if (amount > this.checkingBalance) {
-        System.out.printf("You cannot withdraw $%,.2f because it exceeds your checking account balance by $%,.2f. Please withdraw $%,.2f or less.%n", amount, amount - this.checkingBalance, this.checkingBalance);
+      if (amount > checkingBalance) {
+        System.out.printf("You cannot withdraw $%,.2f because it exceeds your checking account balance by $%,.2f. Please withdraw $%,.2f or less.%n", amount, amount - checkingBalance, checkingBalance);
       } else {
         this.setCheckingBalance(this.checkingBalance - amount);
         }
     } else if (accountType.equals("savings")) {
-      if (amount > this.savingsBalance) {
+      if (amount > savingsBalance) {
         System.out.printf(
             "You cannot withdraw $%,.2f because it exceeds your savings account balance by $%,.2f. Please withdraw $%,.2f or less.%n",
-            amount, amount - this.savingsBalance, this.savingsBalance);
+            amount, amount - savingsBalance, savingsBalance);
       } else {
-        this.setSavingsBalance(this.savingsBalance - amount);
+        this.setSavingsBalance(savingsBalance - amount);
       }
     }
   }
@@ -159,10 +162,17 @@ public class BankAccount {
    * Generates a random account number on the interval [1, 10^10).
    * @return A random account number on the interval [1, 10^10) [int]
    */
+  // private static int generateRandomAccountNum(int length) {
   private static int generateRandomAccountNum() {
     Random randMachine = new Random();
 
     int randomAccountNum = randMachine.nextInt(999999999) + 1;
+    // int randomAccountNum = randMachine.nextInt(length) + 1;
+    // int randomAccountNum = randMachine.nextInt(length - 1) + 1;
     return randomAccountNum;
   }
 }
+
+// Random
+
+// HashMap
