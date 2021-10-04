@@ -103,20 +103,25 @@ public class BankAccount {
   //SETTERS
   /**
    * Sets the balance of a checking account.
-   * @param checkingBalance Value to set the checking account balance at
+   * @param checkingBalance Value to set the checking account balance to
    */
   public void setCheckingBalance(double checkingBalance) {
     this.checkingBalance = checkingBalance;
   }
 
   /**
-   * 
-   * @param savingsBalance
+   * Sets the balance of a savings account.
+   * @param savingsBalance Value to set the savings account balance to
    */
   public void setSavingsBalance(double savingsBalance) {
     this.savingsBalance = savingsBalance;
   }
 
+  /**
+   * Makes a deposit equal to the value specified in the "amount" argument. Depositing in checking/savings is determined specified "accountType" argument.
+   * @param accountType "checking" or "savings"
+   * @param amount Amount to deposit
+   */
   public void depositUSD(String accountType, double amount) {
     if (accountType.equals("checking")) {
       this.setCheckingBalance(this.checkingBalance + amount); 
@@ -125,6 +130,12 @@ public class BankAccount {
     }
   }
 
+  /**
+   * Makes a withdrawal equal to the value specified in the "amount" argument if the account balance is greater than or equal to the withdrawal requested. Withdrawing in checking/savings is determined specified "accountType" argument.
+   * 
+   * @param accountType "checking" or "savings"
+   * @param amount Amount to withdraw
+   */
   public void withdrawUSD(String accountType, double amount) {
     if (accountType.equals("checking")) {
       if (amount > this.checkingBalance) {
@@ -144,6 +155,10 @@ public class BankAccount {
   }
 
   // Private method - used locally within BankAccount class
+  /**
+   * Generates a random account number on the interval [1, 10^10).
+   * @return A random account number on the interval [1, 10^10) [int]
+   */
   private static int generateRandomAccountNum() {
     Random randMachine = new Random();
 
