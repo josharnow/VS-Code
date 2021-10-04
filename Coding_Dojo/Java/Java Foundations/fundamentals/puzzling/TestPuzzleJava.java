@@ -14,7 +14,7 @@ public class TestPuzzleJava {
     byte i = 0;
     for (int num : randomRolls) {
       ++i;
-      System.out.printf("Roll #%d: %d \n", i, num);
+      System.out.printf("Roll #%d: %d %n", i, num);
     }
 
     // getRandomLetter
@@ -23,9 +23,10 @@ public class TestPuzzleJava {
 
     System.out.println("----- Random Letter Test -----");
 
-    System.out.println("Lower case: " + randLetter);
-    System.out.println("Upper case: " + upperCaseRandLetter);
-    // System.out.printf("Random letter: %c", randLetter); // *adds extra % in console, for some reason*
+    System.out.printf("Lower case: %c%n", randLetter);
+    System.out.printf("Upper case: %C%n", randLetter);
+    // System.out.printf("Lower case: " + randLetter);
+    // System.out.printlf("Upper case: " + upperCaseRandLetter);
     
     // generatePassword
     String password = generator.generatePassword();
@@ -37,9 +38,9 @@ public class TestPuzzleJava {
     System.out.println("----- Generate Password Set Test -----");
     System.out.println(String.join(", ", passwordSet));
     
-    // shuffleArray
-    String[] shuffleArray = generator.shuffleArray(passwordSet);
-    System.out.println("----- Shuffle Array Test -----");
-    System.out.println(String.join(", ", shuffleArray));
+    // // shuffleArray
+    // String[] shuffleArray = generator.shuffleArray(passwordSet);
+    // System.out.println("----- Shuffle Array Test -----");
+    // System.out.println(String.join(", ", shuffleArray));
   }
 }

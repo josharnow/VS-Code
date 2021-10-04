@@ -25,7 +25,7 @@ public class ListManager {
     // Set<String> keys = trackList.keySet(); // get the keys by using the keySet method
     String value = trackList.get(title);
 
-    System.out.printf("----- %s -----\n", title);
+    System.out.printf("----- %s -----%n", title);
     System.out.println(value);
     
   }
@@ -40,7 +40,7 @@ public class ListManager {
     System.out.println("----- Current Set List -----");
     for(String key : keys) {
       String value = trackList.get(key);
-      System.out.printf("%s: %s \n", key, value);
+      System.out.printf("%s: %s %n", key, value);
     }
   }
 }
