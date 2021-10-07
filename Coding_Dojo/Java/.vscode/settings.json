@@ -14,5 +14,6 @@
     "Java Foundations/Java OOP/misc/constructors-and-method-overloading",
     "Java OOP/misc/constructors-and-method-overloading"
   ],
-  "java.dependency.packagePresentation": "hierarchical"
+  "java.dependency.packagePresentation": "hierarchical",
+  "java.configuration.updateBuildConfiguration": "interactive"
 }
