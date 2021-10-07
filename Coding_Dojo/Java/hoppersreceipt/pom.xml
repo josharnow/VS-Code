@@ -8,12 +8,12 @@
 		<version>2.5.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.codingdojo.daikichiroutes</groupId>
-	<artifactId>daikichiroutes</artifactId>
+	<groupId>com.codingdojo.hoppersreceipt</groupId>
+	<artifactId>hoppersreceipt</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>daikichiroutes</name>
-	<description>&quot;Daikichi Routes&quot; (Practice)</description>
+	<name>hoppersreceipt</name>
+	<description>&quot;Hopper&apos;s Receipt&quot; (Practice)</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
@@ -46,7 +46,7 @@
         <dependency>
                 <groupId>javax.servlet</groupId>
                 <artifactId>jstl</artifactId>
-        </dependency>		
+        </dependency>
 	</dependencies>
 
 	<build>
