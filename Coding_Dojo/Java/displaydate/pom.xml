@@ -8,12 +8,12 @@
 		<version>2.5.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.codingdojo.hoppersreceipt</groupId>
-	<artifactId>hoppersreceipt</artifactId>
+	<groupId>com.codingdojo.displaydate</groupId>
+	<artifactId>displaydate</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>hoppersreceipt</name>
-	<description>&quot;Hopper&apos;s Receipt&quot; (Practice)</description>
+	<name>displaydate</name>
+	<description>&quot;Display Date&quot; (Optional)</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
