@@ -9,7 +9,7 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css"><%-- YOUR own local CSS --%><%-- href path is "static" folder e.g. href="css/style.css" --%>
 </head>
 <body>
-	<h1 class="text-center"><c:out value="${time}"/></h1>
+	<h1 class="text-center greenText"><c:out value="${time}"/></h1>
 	<a href="/">Return to Index</a>
 <!-- 	<a class="text-center" href="">Return to Index</a> -->
 	
