@@ -1,8 +1,6 @@
-.box{
-	border: 1px solid black;
-	background-color: aqua;
-	width: 90%;
-	height: auto;
+*{
+    margin: 0;
+    padding: 0;
 }
 
 .formBox{
@@ -13,7 +11,7 @@
 }
 
 .centeredFormItems{
-	margin: 0 auto;
+	margin: 0 auto; /* centers items horizontally */
 }
 
 #dropdown{

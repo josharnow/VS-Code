@@ -6,8 +6,8 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Omikuji</title>
+	<link rel="stylesheet" type="text/css" href="/css/omikujiForm.css"><%-- YOUR own local CSS --%><%-- href path is "static" folder e.g. href="css/style.css" --%>
 	<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" /><%-- for Bootstrap CSS --%>
-	<link rel="stylesheet" type="text/css" href="css/style.css"><%-- YOUR own local CSS --%><%-- href path is "static" folder e.g. href="css/style.css" --%>
 </head>
 <body>
 	<h1 class="text-center">Send an Omikuji!</h1>
@@ -15,7 +15,7 @@
 	<div class="formBox justify-content-center centeredFormItems">
 		<form action="/omikuji/submit" target="" method="POST" id="" class="d-flex flex-column justify-content-center">
 			<label for="number" class="centeredFormItems">Pick any number from 5 to 25: </label>
-				<input type="number" class="centeredFormItems" name="number" onclick="" id="number"></input>
+				<input type="number" min="5" max="25" class="centeredFormItems" name="number" onclick="" id="number"></input>
 
 			<label for="city" class="centeredFormItems">Enter the name of any city: </label>
 				<input type="text" class="centeredFormItems" name="city" onclick="" id="city"></input>
@@ -37,7 +37,7 @@
 		</form>
 	</div>
 	
-	<script type="text/javascript" src="js/app.js"></script><%-- for YOUR JS --%><%-- src path is "static" folder e.g. src="js/app.js" --%>
+	<!-- <script type="text/javascript" src="/js/app.js"></script><%-- for YOUR JS --%><%-- src path is "static" folder e.g. src="/js/app.js" --%> -->
 	<script src="/webjars/jquery/jquery.min.js"></script><%-- For any Bootstrap that uses JS or jQuery--%>
 	<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 </body>

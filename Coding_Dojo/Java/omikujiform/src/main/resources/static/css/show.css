@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#box{
+	border: 1px solid black;
+	background-color: aqua;
+	width: 90%;
+	height: auto;
+  margin: 0 auto; /* centers box horizontally */
+  padding: 2.5%;
+}
+
+.noMargin{
+  margin: 0;
+}
+
+/* .horizontalCenter{
+  margin: 0 auto;
+  width: fit-content;
+} */
