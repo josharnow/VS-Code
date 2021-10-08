@@ -5,34 +5,13 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Fruit Store</title>
+	<title>Welcome, again</title>
 	<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" /><%-- for Bootstrap CSS --%>
 	<link rel="stylesheet" type="text/css" href="css/style.css"><%-- YOUR own local CSS --%><%-- href path is "static" folder e.g. href="css/style.css" --%>
 </head>
 <body>
-	<h1 class="text-center">Fruit Store</h1>
-	<table class="table">
-		<thead>
-			<tr>
-				<th>Name</th>
-				<th>Price</th>
-			</tr>
-		</thead>
-		<tbody>
-		<c:forEach var="fruit" items="${fruitsFromMyController}">
-			<tr>
-				<td><c:out value="${fruit.name}"/></td>
-				<td><fmt:formatNumber value="${fruit.price}" type="currency"/></td>
-			</tr>
-		</c:forEach>
-<%-- 		<c:forEach var="fruit" items="${fruitsFromMyController}">
-			<tr>
-				<td><c:out value="${fruit.name}"/></td>
-				<td>$<c:out value="${fruit.price}"/></td>
-			</tr>
-		</c:forEach> --%>
-		</tbody>
-	</table>
+	<h1 class="text-center">Welcome User!</h1>
+	<a href="counter">Go to Counter Page</a>
 	
 	<script type="text/javascript" src="js/app.js"></script><%-- for YOUR JS --%><%-- src path is "static" folder e.g. src="js/app.js" --%>
 	<script src="/webjars/jquery/jquery.min.js"></script><%-- For any Bootstrap that uses JS or jQuery--%>

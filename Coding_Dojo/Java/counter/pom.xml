@@ -8,12 +8,12 @@
 		<version>2.5.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.codingdojo.fruityloops</groupId>
-	<artifactId>fruityloops</artifactId>
+	<groupId>com.codingdojo.counter</groupId>
+	<artifactId>counter</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>fruityloops</name>
-	<description>&quot;Fruity Loops&quot; (Core)</description>
+	<name>counter</name>
+	<description>&quot;Counter&quot; (Practice)</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
@@ -41,12 +41,12 @@
 		</dependency>
 		<!-- CUSTOM ADDED DEPENDENCIES BELOW -->
 		<dependency>
-                <groupId>org.apache.tomcat.embed</groupId>
-                <artifactId>tomcat-embed-jasper</artifactId>
+        	<groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-jasper</artifactId>
         </dependency>
         <dependency>
-                <groupId>javax.servlet</groupId>
-                <artifactId>jstl</artifactId>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
         </dependency>
 		<!-- webjars locator dependency enables auto-detection of the version, so your .jsp 
 		file links are version-agnostic in case you update the versions here in your pom later -->
