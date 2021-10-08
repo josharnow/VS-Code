@@ -1,101 +1,11 @@
-// class Node {
-//   constructor(val) {
-//     this.val = val;
-//     this.next = null; // node (.val, .next)
-//     //THIS IS NEW
-//     this.child = null; // SLL (.head)
-//   }
-// }
-
-// class SLL {
-//   constructor() {
-//     this.head = null;
-//   }
-
-//   addToFront(val) {
-    // let newNode = new Node(val);
-    // newNode.next = this.head;
-    // this.head = newNode;
-//   }
-
-  // printMe() {
-  //   let returnStr = '';
-  //   let runner = this.head;
-  //   while (runner != null) {
-  //     returnStr += `${runner.val} -> `;
-  //     runner = runner.next;
-  //   }
-  //   console.log(returnStr);
-  //   return returnStr;
-  // }
-
-//   //populates each node with a random amount of children from 0 to 4
-//   populateChildren() {
-
-//     let runner = this.head;
-
-//     while (runner !== null) {
-//       let numChildren = Math.floor(Math.random() * 5);
-//       if (numChildren !== 0) {
-//         let childList = new SLL();
-//         for (let i = 0; i < numChildren; ++i) {
-//           childList.addToFront(Math.floor(Math.random() * 50));
-//         }
-//         runner.child = childList;
-//       }
-//       runner = runner.next;
-//     }
-//     flattenChildren(){
-//       let runner = this.head;
-
-//       //if node has child. save the node.next
-//       while (runner != null) {
-//         if (runner.child != null) {
-//           let tempNode = runner.next;
-//           //point node.next to this.head of child.
-//           runner.next = runner.child.head;
-//           while (runner.next != null) {
-//             runner = runner.next;
-//           }
-//           //point last node of child to the node.next that is saved
-//           runner.next = tempNode
-//         }
-//         runner = runner.next;
-//       }
-//       return this
-//     }
-//   }
-
-
-//   printMeWithChildren() {
-//     let returnStr = '';
-//     let runner = this.head;
-//     while (runner != null) {
-//       returnStr += `${runner.val}`;
-//       if (runner.child) {
-//         returnStr += "(";
-//         let runner2 = runner.child.head;
-//         while (runner2 !== null) {
-//           returnStr += `${runner2.val} ->`;
-//           runner2 = runner2.next;
-//         }
-//         returnStr += ")";
-//       }
-//       returnStr += " -> ";
-//       runner = runner.next;
-//     }
-//     console.log(returnStr);
-//     return returnStr;
-//   }
-// }
-
 class NodeDLL {
-  constructor(valueInput) {
-    this.value = valueInput;
+  constructor(value) {
+    this.value = value;
     this.next = null;
     this.prev = null;
   }
 }
+
 
 class DLL {
   constructor() {
@@ -104,55 +14,109 @@ class DLL {
     this.length = 0;
   }
 
-  addBack(value) {
-    let newNode = new NodeDLL(value);
-    newNode = this.tail.next;
-    newNode.prev = this.tail;
-    this.tail = newNode;
+  addToFront(value) {
+    var node = new NodeDLL(value);
+    if (!this.head) {
+      this.head = node;
+      this.tail = node;
+    }
+    else {
+      node.next = this.head;
+      this.head.prev = node;
+      this.head = node;
+    }
+    this.length++
+    return this;
   }
 
-  addFront(value) {
-    let newNode = new NodeDLL(value);
-    newNode.next = this.head;
-    this.head = newNode;
-  }
-
-  removeBack() {
+  addtoBack(value) {
+    var node = new NodeDLL(value);
     if (!this.tail) {
-      console.log("Back is removed from list!")
+      this.tail = node;
+      this.head = node;
+    }
+    else {
+      node.prev = this.tail;
+      this.tail.next = node;
+      this.tail = node;
+    }
+    this.length++
+    return this;
+  }
+
+  removeFromFront() {
+    if (!this.head) {
+      console.log("List is empty!")
       return this;
     }
+    this.head = this.head.next
+    this.head.prev.next = null;
+    this.head.prev = null;
+    this.length--;
+    return this;
+  }
+
+  removeFromBack() {
+    if (!this.tail) {
+      console.log("List is empty!")
+      return this;
+    }
+    this.tail = this.tail.prev;
     this.tail.next.prev = null;
     this.tail.next = null;
     this.length--;
     return this;
   }
-  remFront() {
 
-  }
-
-  print() {
-    let returnStr = '';
+  printList() {
     let runner = this.head;
-    while (runner != null) {
-      returnStr += `${runner.value} -> `;
+    while (runner) {
+      console.log(runner.value);
       runner = runner.next;
     }
-    console.log(returnStr);
-    return returnStr;
   }
-  
-  printBackwards() {
-
+  printListBackwards() {
+    let runner = this.tail;
+    while (runner) {
+      console.log(runner.value);
+      runner = runner.prev;
+    }
   }
+  reverseList() {
+    let runner = this.head;
+    if (!this.head) {
+      return this;
+    }
+    while (runner) {
+      let temp = runner.next;
+      runner.next = runner.prev;
+      runner.prev = temp;
+      runner = temp;
+    }
+    temp = this.head
+    this.head = this.tail;
+    this.tail = temp;
 
-
-
+    return this;
+  }
+  reverseListRecursive(runner = this.head) {
+    let temp = this.head;
+    if (!runner) {
+      this.head = this.tail;
+      this.tail = temp;
+      return this;
+    }
+    let nextNode = runner.next;
+    runner.next = runner.prev;
+    runner.prev = temp;
+    return this.reverseListRecursive(nextNode);
+  }
 }
 
-const listDLL = new DLL;
-listDLL.addFront(5);
-listDLL.addFront(9);
-listDLL.addBack(7);
-
-listDLL.print();
+const list = new DLL;
+list.addToFront(5);
+list.addToFront(7);
+list.addToFront(9);
+list.printList();
+list.reverseListRecursive();
+list.printList();
