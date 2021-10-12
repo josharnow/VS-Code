@@ -3,7 +3,7 @@
     padding: 0;
 }
 
-#box{
+.box{
 	border: 1px solid black;
 	background-color: aqua;
 	width: 90%;

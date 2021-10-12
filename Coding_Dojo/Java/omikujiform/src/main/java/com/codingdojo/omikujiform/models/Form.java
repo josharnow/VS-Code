@@ -9,6 +9,10 @@ public class Form {
   private String textBox;
 
   // CONSTRUCTOR
+  // public Form() {
+  //   super();
+  // }
+
   public Form(int number, String city, String person, String endeavor, String livingThing, String textBox) {
     super();
     this.number = number;

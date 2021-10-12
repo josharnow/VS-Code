@@ -1,13 +1,16 @@
 package com.codingdojo.omikujiform.controllers;
+//import java.util.ArrayList;
+
 import javax.servlet.http.HttpSession;
 
-import com.codingdojo.omikujiform.models.Form;
+//import com.codingdojo.omikujiform.models.Form;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 
 @Controller
@@ -47,7 +50,17 @@ public class FormController {
 
   @GetMapping("/omikuji/show")
   public String render(HttpSession session, Model model) {
+    // Integer number = (Integer) session.getAttribute("number");
+    // String city = (String) session.getAttribute("city");
+    // String person = (String) session.getAttribute("person");
+    // String endeavor = (String) session.getAttribute("endeavor");
+    // String livingThing = (String) session.getAttribute("livingThing");
+    // String textBox = (String) session.getAttribute("textBox");
+
+    // Form form = new Form(number, city, person, endeavor, livingThing, textBox); // Form refers to Form.java in models folder
+
     // Get any info needed out of session and add to the view model to render on the page.
+
     model.addAttribute("number", session.getAttribute("number"));
     model.addAttribute("city", session.getAttribute("city"));
     model.addAttribute("person", session.getAttribute("person"));
@@ -55,7 +68,27 @@ public class FormController {
     model.addAttribute("livingThing", session.getAttribute("livingThing"));
     model.addAttribute("textBox", session.getAttribute("textBox"));
 
+    // ArrayList<Form> form = new ArrayList<Form>();
+    // form.add()
+
+
+    // model.addAttribute("formFromMyController", form);
+
+    // model.addAttribute("number", form.getNumber());
+    // model.addAttribute("city", form.getCity());
+    // model.addAttribute("person", form.getPerson());
+    // model.addAttribute("endeavor", form.getEndeavor());
+    // model.addAttribute("livingThing", form.getLivingThing());
+    // model.addAttribute("textBox", form.getTextBox());
+
+
     return "show.jsp";
   }
+  
+	@GetMapping("/createError") // the only time that an error would be printed out is immediately following visiting /createError. This allows us to pass temporary data through our application to notify users across new request/response cycles.
+	public String flashMessages(RedirectAttributes redirectAttributes) {
+		redirectAttributes.addFlashAttribute("error", "A test error!");
+		return "redirect:/";
+	}
   
 }

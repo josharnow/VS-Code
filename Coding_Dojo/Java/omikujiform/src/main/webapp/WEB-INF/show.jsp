@@ -13,11 +13,24 @@
 <body>
 	<h1 class="text-center">Here's your Omikuji!</h1>
 	
-	<div id="box">
+	<div class="box">
 		<p class="noMargin">
 			In <c:out value="${number}" /> years, you will live in <c:out value="${city}" /> with <c:out value="${person}" /> as your roommate, <c:out value="${endeavor}"/> for a living. The next time you see a <c:out value="${livingThing}"/>, you will have good luck. Also, <c:out value="${textBox}" />.
 		</p>
 	</div>
+
+		<!-- <div class="box">
+			<p>TESTING</p>
+			<p class="noMargin">
+				In
+				<c:out value="${formFromMyController.number}" /> years, you will live in
+				<c:out value="${city}" /> with
+				<c:out value="${person}" /> as your roommate,
+				<c:out value="${endeavor}" /> for a living. The next time you see a
+				<c:out value="${livingThing}" />, you will have good luck. Also,
+				<c:out value="${textBox}" />.
+			</p>
+		</div> -->
 
 	<div class="d-flex justify-content-center">
 		<a href="/omikuji">Go Back</a>
