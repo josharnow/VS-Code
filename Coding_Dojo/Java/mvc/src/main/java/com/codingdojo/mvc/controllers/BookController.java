@@ -1,6 +1,7 @@
 package com.codingdojo.mvc.controllers;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,12 +16,13 @@ import com.codingdojo.mvc.services.BookService;
 public class BookController {
 	
 	@Autowired // In place of creating bookService variable and putting it into the constructor is @Autowired; this does dependency injection for you. Saves a few lines of code
-	BookService bookService;
+	BookService service;
 	
 	@GetMapping("/books")
-	public String index() {
-
-		return "index.jsp";
+	public String index(Model model) {
+		List<Book> books = service.allBooks();
+		model.addAttribute("books", books); // What items="${books}" refers to from index.jsp
+		return "/books/index.jsp";
 	}
 	
 	@GetMapping("/books/{bookId}") // URL contains path variable
@@ -29,13 +31,13 @@ public class BookController {
 			@PathVariable("bookId") Long bookId) { // @PathVariable() argument must match path variable supplied in URL above
 		
 		System.out.println(bookId);
-		Book book = bookService.findBook(bookId);
+		Book book = service.findBook(bookId);
 		System.out.println(book);
 		
 //		ArrayList<Book> books = bookService.getAllBooks();
 		
 		model.addAttribute("book", book);
 		
-		return "show.jsp";
+		return "/books/show.jsp";
 	}
 }

@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class MainController {
 	
 //	@RequestMapping("/")
-	@GetMapping("/") // May also use the syntax@GetMapping instead of @RequestMapping for your GET routes. There is no difference.
+	@GetMapping("/") // May also use the syntax @GetMapping instead of @RequestMapping for your GET routes. There is no difference.
 	public String index() {
 		return "index.jsp";
 	}
@@ -28,7 +28,7 @@ public class MainController {
 	    	// CODE TO PROCESS FORM i.e. check email and password
 	    	
 //	    	return "results.jsp"; // <-- we'll change this when we learn redirecting
-			return "redirect:/dashboard"; // Instead of passing the view engine a path to a file to render, we are sending it an instruction to redirect: "redirect:/dashboard"
+		return "redirect:/dashboard"; // Instead of passing the view engine a path to a file to render, we are sending it an instruction to redirect: "redirect:/dashboard"
 	}
 	
 	// ...
