@@ -15,13 +15,13 @@ import com.codingdojo.mvc.services.BookService;
 
 @RestController
 public class BooksApi {
-    private final BookService bookService; // tells us that we are going to be using a bookService and that it will not be changing
-    public BooksApi(BookService bookService){ // dependency injection; makes bookService available in our controller
-        this.bookService = bookService;
+    private final BookService service; // tells us that we are going to be using a bookService and that it will not be changing
+    public BooksApi(BookService service){ // dependency injection; makes bookService available in our controller
+        this.service = service;
     }
     @GetMapping("/api/books")
     public List<Book> index() {
-        return bookService.allBooks();
+        return service.allBooks();
     }
     
     @PostMapping("/api/books")
@@ -31,29 +31,33 @@ public class BooksApi {
     		@RequestParam(value="language") String lang, 
     		@RequestParam(value="pages") Integer numOfPages) {
         Book book = new Book(title, desc, lang, numOfPages);
-        return bookService.createBook(book);
+        return service.createBook(book);
     }
     
     @GetMapping("/api/books/{id}")
     public Book show(
     		@PathVariable("id") Long id) {
-        Book book = bookService.findBook(id);
+        Book book = service.findBook(id);
         return book;
+    }
         
 
-    @PutMapping("/api/books/{id}")
+    @PutMapping("/api/books/{id}") // Because this is a put request, it is not expecting to get RequestParams below in the URL itself, but rather sends them through the body of the request
     public Book update(
         		@PathVariable("id") Long id, 
         		@RequestParam(value="title") String title, 
-        		@RequestParam(value="description") String desc, 
+        		@RequestParam(value="description") String description, 
         		@RequestParam(value="language") String lang,
         		@RequestParam(value="pages") Integer numOfPages) {
-            Book book = bookService.updateBook(id, title, desc, lang, numOfPages);
+            Book book = service.updateBook(id, title, description, lang, numOfPages);
+            
+          //  Book book = new Book(id, title, description, lang, numOfPages);
+            
             return book;
         }
     
     @DeleteMapping("/api/books/{id}")
     public void destroy(@PathVariable("id") Long id) {
-            bookService.deleteBook(id);
+            service.deleteBook(id);
     }
 }

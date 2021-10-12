@@ -17,8 +17,14 @@ public class BookController {
 	@Autowired // In place of creating bookService variable and putting it into the constructor is @Autowired; this does dependency injection for you. Saves a few lines of code
 	BookService bookService;
 	
+	@GetMapping("/books")
+	public String index() {
+
+		return "index.jsp";
+	}
+	
 	@GetMapping("/books/{bookId}") // URL contains path variable
-	public String index(
+	public String show(
 			Model model, 
 			@PathVariable("bookId") Long bookId) { // @PathVariable() argument must match path variable supplied in URL above
 		
@@ -30,6 +36,6 @@ public class BookController {
 		
 		model.addAttribute("book", book);
 		
-		return "index.jsp";
+		return "show.jsp";
 	}
 }
