@@ -32,10 +32,13 @@ public class ExpenseController {
 	
 	@GetMapping("/expenses")
 	public String index(
-			Model model) {
+			Model model,
+			@ModelAttribute("expense") Expense expense) {
 		List<Expense> allExpenses = service.allExpenses();
 		model.addAttribute("expenses", allExpenses); // What items="${expenses}" refers to from index.jsp
-		model.addAttribute("expense", new Expense()); // Required to address this error: "Neither BindingResult nor plain target object for bean name 'expense' available as request attribute:
+		
+    	//COMMENT OUT?
+		// model.addAttribute("expense", new Expense()); // Required to address this error: "Neither BindingResult nor plain target object for bean name 'expense' available as request attribute:
 		return "/expenses/index.jsp";
 	}
 //	@GetMapping("/expenses/{id}") // URL contains path variable
@@ -52,17 +55,18 @@ public class ExpenseController {
 //		return "/expenses/show.jsp";
 //	}
 	
-	@GetMapping("/expenses/submitForm")
-    public String create(
-    		Model model) {
-        model.addAttribute("expense", new Expense());
-        return "formButton";
-    }
+//	@GetMapping("/expenses/submitForm")
+//    public String create(
+//    		Model model) {
+//        model.addAttribute("expense", new Expense());
+//        return "formButton";
+//    }
 	
-	@PostMapping("/expenses/submitForm")
+//	@PostMapping("/expenses/submitForm")
+	@PostMapping("/expenses")
 	public String processCreate(
 			@Valid @ModelAttribute("expense") Expense expense, // @ModelAttribute is not used here to access data sent with the request, but rather to instantiate a new Book type and bind to our view model. Since no Book is being passed, an empty book will be instantiated and bound to our view model; the binding to our model will allow us to create a form that is also bound to the Book type. allowing us to validate the information against our Book type. @Valid is used to check to see if the submitted object passes validation.
-			BindingResult result, 
+			BindingResult result,
 			Model model) { // BindingResult is also injected to see if the object passes validation; must come immediately after @Valid parameter.
 //		ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
 //		Validator validator = factory.getValidator();
@@ -83,40 +87,12 @@ public class ExpenseController {
 	    System.out.println(result.getAllErrors());
 	    
 	    if (result.hasErrors()) {
-//	    	redirectAttributes.addFlashAttribute("errorCount", result.getErrorCount());
-//
-//	    	redirectAttributes.addFlashAttribute("expenseNameError", result.getFieldErrors());
-//	    	redirectAttributes.addFlashAttribute("vendorError", result.getFieldError("vendor"));
-//	    	redirectAttributes.addFlashAttribute("costError", result.getAllErrors());
-//	    	redirectAttributes.addFlashAttribute("descriptionError", result);
-//	    	redirectAttributes.
+//	    	return "redirect:/expenses/createError";
+//	    	return "redirect:/expenses";
+			List<Expense> allExpenses = service.allExpenses();
+			model.addAttribute("expenses", allExpenses);
 	    	
-	    	
-	    	
-//	    	for (ConstraintViolation<Expense> violation : violations) 
-//	    	{
-//	    		String propertyPath = violation.getPropertyPath().toString();
-//	    		String message = violation.getMessage();
-//	    		// Add JSR-303 errors to BindingResult
-//	    		// This allows Spring to display them in view via a FieldError
-//	    		result.addError(new FieldError("expense", propertyPath, 
-//	    				"Invalid "+ propertyPath + " (" + message + ")"));
-////		        if (propertyPath == "expenseName") {
-////		        	redirectAttributes.addFlashAttribute("expenseNameError", message);
-////				}
-////		        if (propertyPath == "vendor") {
-////		        	redirectAttributes.addFlashAttribute("vendorError", message);
-////				}
-////		        if (propertyPath == "cost") {
-////		        	redirectAttributes.addFlashAttribute("costError", message);
-////				}
-////		        if (propertyPath == "cost") {
-////		        	redirectAttributes.addFlashAttribute("costError", message);
-////				}
-//	    	}
-	    	model.addAttribute("expense", new Expense());
-	    	
-	    	return "redirect:/expenses/createError";
+	    	return "/expenses/index.jsp";
 		}
 	    
 	    service.createExpense(expense);

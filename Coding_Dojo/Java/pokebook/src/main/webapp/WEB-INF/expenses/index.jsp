@@ -36,30 +36,30 @@
 		<h2 class="blueText leftMargin2 textPadding">Track an expense:</h2>
 <%-- 		<c:if test="${errorCount > 0}"><p class="redText leftMargin2">There are <c:out value="${errorCount}"/> errors on this form</p></c:if> --%>
 
-		<c:url var="actionUrl" value="/expenses/submitForm" />
+		<c:url var="actionUrl" value="/expenses" />
 		<form:form modelAttribute="expense" class="d-flex flex-column formWidth centeredForm" action="${actionUrl}" method="POST">
 <%--  			<c:if test="${expenseNameError != null}"><p class="redText leftMargin2"><c:out value="${expenseNameError}"/></p></c:if> --%>
 			<p>
 				<form:label for="expenseName" path="expenseName">Expense Name: </form:label>
-					<form:errors path="expenseName"/> <!-- Checks for errors -->
+					<form:errors path="expenseName" class="redText"/> <!-- Checks for errors -->
 					<form:input type="text" name="expenseName" id="expenseName" path="expenseName"/>
 			</p>
 				
 			<p>
 				<form:label for="vendor" path="vendor">Vendor: </form:label>
-					<form:errors path="vendor"/>
+					<form:errors path="vendor" class="redText"/>
 					<form:input type="text" name="vendor" id="vendor" path="vendor"/>
 			</p>
 					
 			<p>
 				<form:label for="amount" path="cost">Amount ($USD): </form:label>
-					<form:errors path="cost"/>
+					<form:errors path="cost" class="redText"/>
 					<form:input type="text" name="cost" id="amount" path="cost"/>
 			</p>
 			
 			<p>
 				<form:label for="description" path="description">Description: </form:label>
-					<form:errors path="description"/>
+					<form:errors path="description" class="redText"/>
 					<form:textarea rows="" cols="" name="description" id="description" path="description"/>
 			</p>
 				
