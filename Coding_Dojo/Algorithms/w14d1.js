@@ -59,6 +59,21 @@ findMax() {
 
   return max.value;
 }
+
+  printBST(node) {
+
+    // if the BST is empty (Edge case)
+    if (node == null) {
+      return this
+    }
+
+    // print out the node with value left and right
+    this.printBST(node.left)
+    console.log(node.value)
+
+    this.printBST(node.right)
+
+  }
 }
 
 // class BSTNode {
@@ -131,7 +146,7 @@ findMax() {
 //   }
 
 //   }
-  
+
 
 
 // const tree = new BST;

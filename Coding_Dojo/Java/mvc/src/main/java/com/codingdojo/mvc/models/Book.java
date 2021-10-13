@@ -27,10 +27,10 @@ public class Book {
     @Size(min = 5, max = 200)
     private String description;
     @NotNull
-    @Size(min = 3, max = 40)
+    @Size(min = 3, max = 40, message="Language must be at least 3 characters.") // Custom error message
     private String language;
     @NotNull
-    @Min(100)
+    @Min(value = 100, message="Must be at least 100 pages.") // Custom error message
     private Integer numberOfPages;
     // This will not allow the createdAt column to be updated after creation
     @Column(updatable=false)
@@ -39,7 +39,8 @@ public class Book {
     @DateTimeFormat(pattern="yyyy-MM-dd")
     private Date updatedAt;
     
-    public Book() { // CONSTRUCTOR
+    // CONSTRUCTOR(S)
+    public Book() { 
     }
     public Book(String title, String desc, String lang, int pages) {
         this.title = title;

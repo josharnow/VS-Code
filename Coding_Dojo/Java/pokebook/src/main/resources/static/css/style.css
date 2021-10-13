@@ -1,0 +1,58 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+.blueText{
+	color: blue;
+}
+
+.redText{
+	color: red;
+}
+
+.leftMargin{
+	margin-left: 5%;
+}
+
+.leftMargin2{
+	margin-left: 25%;
+}
+
+.textPadding{
+	padding-top: 2vh;
+	padding-bottom: 2vh;
+}
+
+#tableBox{
+	margin: 0 auto;
+	width: 90%;
+}
+
+.tableBorders{
+	border-left: solid 5px black;
+	border-right: solid 5px black;
+}
+
+.tableTopBorder{
+	border-top: solid 5px black;
+}
+
+.tableBottomBorder{
+	border-bottom: solid 5px black;
+}
+
+.formWidth{
+	width: 50%;
+}
+
+.centeredForm{
+	margin: 0 auto;
+}
+
+#formButton{
+	box-shadow: 80%;
+	margin-top: 5%;
+	width: 15%;
+	justify-content: flex-end;
+}

@@ -10,8 +10,8 @@
 	<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" /><%-- for Bootstrap CSS --%>
 </head>
 <body>
-	<h1>All Books</h1>
-	<table>
+	<h1 class="text-center">All Books</h1>
+	<table class="table table-sm table-striped table-bordered text-center" id="box">
     	<thead>
        		<tr>
             	<th>ID</th>
@@ -21,14 +21,14 @@
        		</tr>
     	</thead>
     	<tbody>
-         	<c:forEach var="book" items="${books}">
+         	<c:forEach var="book" items="${books}"><!-- loop over all the books to show the details as in the wireframe! -->
          	<tr>
          		<td><c:out value="${book.id}"></c:out></td>
-         		<td><c:out value="${book.title}"></c:out></td>
+         		<td><a href="/books/${book.id}"><c:out value="${book.title}"></c:out></a></td>
          		<td><c:out value="${book.language}"></c:out></td>
          		<td><c:out value="${book.numberOfPages}"></c:out></td>
          	</tr>
-         	</c:forEach>  <!-- loop over all the books to show the details as in the wireframe! -->
+         	</c:forEach>
 	    </tbody>
 	</table>
 	

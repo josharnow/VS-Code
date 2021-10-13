@@ -10,7 +10,7 @@ import com.codingdojo.mvc.repositories.BookRepository;
 @Service // This annotation will allows Spring to inject this class as a dependency in any controller.
 public class BookService {
 
-	private final BookRepository repo; // adding the book repository as a dependency
+ private final BookRepository repo; // adding the book repository as a dependency
  
  public BookService(BookRepository repo) {
      this.repo = repo;
