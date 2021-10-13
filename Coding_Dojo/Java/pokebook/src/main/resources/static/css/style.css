@@ -11,6 +11,10 @@
 	color: red;
 }
 
+.greenText{
+	color: green;
+}
+
 .leftMargin{
 	margin-left: 5%;
 }
@@ -46,7 +50,7 @@
 	width: 50%;
 }
 
-.centeredForm{
+.centeredForm, .centeredDiv{
 	margin: 0 auto;
 }
 
@@ -55,4 +59,24 @@
 	margin-top: 5%;
 	width: 15%;
 	justify-content: flex-end;
+}
+
+.spaceBetween{
+	justify-content: space-between;
+}
+
+.sideMargins{
+	margin: auto 5%;
+}
+
+.verticalFlexCenter{
+	align-self: center;
+}
+
+.flexJustifyCenter{
+	justify-content: center;
+}
+
+.flexSpaceEvenly{
+	justify-content: space-evenly;
 }

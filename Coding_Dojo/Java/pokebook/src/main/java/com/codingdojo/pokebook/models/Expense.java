@@ -12,6 +12,7 @@ import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 import javax.validation.constraints.DecimalMax;
 import javax.validation.constraints.DecimalMin;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -24,21 +25,22 @@ public class Expense {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@NotNull(message = "Please enter an expense name.")
-	@Size(min = 1, max = 200, message = "Expense name \"${validatedValue}\" must be between {min} and {max} characters long.")
+	@NotEmpty(message = "Please enter an expense name.")
+	@Size(min = 0, max = 200, message = "Expense name must be less than {max} characters long.")
+//	@Max(value = 200, message = "")
 	private String expenseName;
 	
-	@NotNull(message = "Please enter a vendor.")
-	@Size(min = 1, max = 200, message = "Vendor \"${validatedValue}\" must be between {min} and {max} characters long.")
+	@NotEmpty(message = "Please enter a vendor.")
+	@Size(min = 0, max = 200, message = "Vendor must be less than {max} characters long.")
 	private String vendor;
 	
 	@NotNull(message = "Please enter an amount.")
-	@DecimalMin(value = "0.00", message = "Amount \"${validatedValue}\" must be ${min} or greater.")
-	@DecimalMax(value = "1000000000.00", message = "Amount \"${validatedValue}\" must be ${max} or less.")
+	@DecimalMin(value = "0.00", message = "Amount must be ${min} or greater.")
+	@DecimalMax(value = "1000000000.00", message = "Amount must be ${max} or less.")
 	private Double cost;
 	
-	@NotNull(message = "Please enter a description.")
-	@Size(min = 1, max = 1000000, message = "Description must be between {min} and {max} characters.") // Custom error message
+	@NotEmpty(message = "Please enter a description.")
+	@Size(min = 0, max = 1000000, message = "Description must be less than {max} characters.") // Custom error message
 	private String description;
 	
 	// This will not allow the createdAt column to be updated after creation

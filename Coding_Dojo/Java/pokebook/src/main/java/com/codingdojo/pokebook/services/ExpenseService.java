@@ -50,6 +50,20 @@ public class ExpenseService {
 		
 		return repo.save(expense);
 	}
+//	public Expense updateExpense( // updates an expense
+//			Expense expense) {
+//		String expenseName = expense.getExpenseName();
+//		String vendor = expense.getVendor();
+//		Double cost = expense.getCost();
+//		String description = expense.getDescription();
+//		
+//		expense.setExpenseName(expenseName);
+//		expense.setVendor(vendor);
+//		expense.setCost(cost);
+//		expense.setDescription(description);
+//		
+//		return repo.save(expense);
+//	}
 	public void deleteExpense(
 			Long id) {// deletes an expense
 		repo.deleteById(id);
