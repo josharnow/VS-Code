@@ -8,12 +8,12 @@
 		<version>2.5.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.codingdojo.pokebook</groupId>
-	<artifactId>pokebook</artifactId>
+	<groupId>com.codingdojo.dojosandninjas</groupId>
+	<artifactId>dojosandninjas</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>pokebook</name>
-	<description>&quot;Full CRUD PokeBook&quot; (Core)</description>
+	<name>dojosandninjas</name>
+	<description>&quot;Dojos and Ninjas&quot; (Core)</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>

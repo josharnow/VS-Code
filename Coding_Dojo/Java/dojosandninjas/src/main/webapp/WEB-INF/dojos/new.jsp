@@ -2,24 +2,31 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%-- Allow view to render on a PUT request --%>
+<%-- for rendering errors on PUT routes --%>
 <%@ page isErrorPage="true" %>
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Edit My Task</title>
+	<title>New Dojo</title>
 	<link rel="stylesheet" type="text/css" href="/css/style.css"><%-- YOUR own local CSS --%><%-- href path is "static" folder e.g. href="/css/style.css" --%>
 	<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css" /><%-- for Bootstrap CSS --%>
 </head>
 <body>
-	<div class="d-flex spaceBetween sideMargins">
-		<h1 class="greenText">Edit Expense</h1>
-		<a class="verticalFlexCenter" href="/expenses">Go back</a>
-	</div>
+	<h1>New Dojo</h1>
 	
-	<c:url var="actionUrl" value="/expenses/${expense.id}/update" />
-	<form:form modelAttribute="expense" class="d-flex flex-column formWidth centeredForm" action="${actionUrl}" method="PUT">
+	<c:url var="actionUrl" value="/dojos/new/create" />
+	<form:form modelAttribute="dojo" action="${actionUrl}" method="POST" class="d-flex flex-column formWidth centeredForm">
+		<form:errors path="name" class="redText"/> <!-- Checks for errors -->
+		<div>
+			<form:label for="name" path="name">Name: </form:label>
+				<form:input type="text" path="name" name="name" id="name"/>
+		</div>
+		<form:button type="submit" id="formButton">Create</form:button>
+	</form:form>
+	
+	
+<%-- 	<form:form modelAttribute="expense" class="d-flex flex-column formWidth centeredForm" action="${actionUrl}" method="POST">
 		<form:errors path="expenseName" class="redText"/> <!-- Checks for errors -->
 		<p>
 			<form:label for="expenseName" path="expenseName">Expense Name: </form:label>
@@ -46,9 +53,8 @@
 		</p>
 				
 			<form:button type="submit" id="formButton">Submit</form:button>
-	</form:form>
+	</form:form> --%>
 	
-
 	
 	<script type="text/javascript" src="/js/app.js"></script><%-- for YOUR JS --%><%-- src path is "static" folder e.g. src="/js/app.js" --%>
 	<script src="/webjars/jquery/jquery.min.js"></script><%-- For any Bootstrap that uses JS or jQuery--%>
