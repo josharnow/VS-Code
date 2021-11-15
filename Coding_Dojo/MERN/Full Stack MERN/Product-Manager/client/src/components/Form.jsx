@@ -1,4 +1,5 @@
 import React, { useReducer, useState, useRef } from 'react';
+// import { useParams } from "react-router-dom";
 import axios from 'axios';
 import styles from "./Form.module.css";
 
@@ -26,7 +27,7 @@ const initialError = {
     };
   }
   
-  const Form = () => {
+  const Form = (props) => {
     // const [titleError, setTitleError] = useState(null);
     // const [priceError, setPriceError] = useState(null);
     // const [descriptionError, setDescriptionError] = useState(null);
@@ -36,6 +37,34 @@ const initialError = {
     const [error, errorDispatch] = useReducer(reducer, initialError);
     
     // const input = useRef();
+    // if (props) {
+    //   const product = props.product.product;
+    // }
+    // !props &&
+
+    if (props.product) {
+      const product = props.product.product;
+      // console.log(product.title)
+      
+      initialState.title = product.title
+      initialState.price = product.price
+      initialState.description = product.description
+    }
+
+    // if (props.product) {
+    //   const { title, price, description } = props.product;
+    //   // dispatch({
+    //   //   type: name,
+    //   //   payload: value
+    //   // });
+    //   // state = props.product
+    //   // state.title = props.product.title;
+    //   // state.price = props.product.price;
+    //   // state.description = props.product.description;
+    //   console.log(title)
+    // }
+    // // props.product && (initialState = {...product})
+    // // console.log(props.product)
 
 function handleChange(e) {
   const { name, value } = e.target;
@@ -134,24 +163,31 @@ function handleErrors(e) {
 }
 
 function handleSubmit(e) {
+  !props.product && handleCreate(e);
+  props.product && handleUpdate(e);
+}
+
+function handleCreate(e) {
   const { title, price, description } = state;
+  // const { title, price, description } = e.target;
   // const validator = handleErrors(e);
 
   e.preventDefault(); // Prevents default behavior of the submit
-  
+
   // handleErrors(e);
   console.log(handleErrors(e))
   // console.log("submit error:", error)
   // console.log(error === null)
-  
-  axios.post('http://localhost:8000/api/products', { // Make a post request to create a new product
-  title,
-  price,
-  description
-  })
-  .then(res => console.log(res))
-  .catch(err => console.log(err))
 
+  axios.post('http://localhost:8000/api/products', { // Make a post request to create a new product
+    title,
+    price,
+    description
+  })
+    .then(res => console.log(res))
+    .catch(err => console.log(err));
+
+  console.log(title)
   if (!handleErrors(e)) { // resets form inputs to initial states upon successful form submission
     state.title = initialState.title;
     state.price = initialState.price;
@@ -159,11 +195,29 @@ function handleSubmit(e) {
   }
 }
 
+function handleUpdate(e) {
+  const product = props.product.product;
+  const { title, price, description } = state;
+  product && console.log(product._id)
+  // const { title, price, description } = e.target;
+  e.preventDefault();
+
+  // console.log(e.target)
+  
+  axios.put(`http://localhost:8000/api/products/${product._id}`, {
+    title,
+    price,
+    description
+  })
+    .then(res => console.log(res))
+    .catch(err => console.error(err));
+  handleErrors(e);
+}
+
 return (
 <React.Fragment>
   {/* { JSON.stringify(state) } 
-    { JSON.stringify(error) } */}
-    <h1 className='text-center'>Product Manager</h1>
+    { JSON.stringify(error) }  */}
     <form onSubmit={ handleSubmit } className={ styles.form }>
         <div className={ styles.formBox }>
           <label htmlFor='title'>Title</label>

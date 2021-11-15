@@ -2,7 +2,8 @@ import React from 'react';
 import './App.css';
 import Main from './views/Main';
 import Detail from './views/Detail';
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import Edit from './views/Edit';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={ <Main /> } />
         <Route path="/:id" element={ <Detail/> } />
+        <Route path="/:id/edit" element={ <Edit /> } />
       </Routes>
     </BrowserRouter>
   );

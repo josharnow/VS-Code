@@ -36,6 +36,7 @@ function Main(props) {
   return (
     <React.Fragment>
       {/* <h2>Message from the backend: { message }</h2> */}
+      <h1 className='text-center'>Product Manager</h1>
       <Form />
       { loaded && <ProductList products={ products }/> }
     </React.Fragment>
