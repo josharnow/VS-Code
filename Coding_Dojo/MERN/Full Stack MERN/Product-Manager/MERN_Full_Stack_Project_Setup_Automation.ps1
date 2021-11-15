@@ -1,6 +1,8 @@
 # PLACE THIS FILE IN THE PROJECT FOLDER ROOT
 $Database = Read-Host -Prompt 'Input your database name (first letter capitalized)'
 $LowercaseDatabase = $Database.toLower()
+$Collection = Read-Host -Prompt 'Input an initial collection name (first letter capitalized)'
+$LowercaseCollection = $Collection.toLower()
 npm init -y
 
 # Back-end dependencies
@@ -19,7 +21,6 @@ const cors = require("cors");
 
 // Environment vars.
 const port = 8000;
-// const db_name = "NAME_YOUR_DATABASE";
 const db_name = "${Database}";
 module.exports = db_name;
 
@@ -61,49 +62,55 @@ New-Item -Path .\server\config -Name "mongoose.config.js" -ItemType "file" -Valu
 $ControllerContent = @"
 // In our controller file, we export different functions that perform the basic
 // CRUD operations using our User model.
-// ${Database} is a constructor function which can create new joke objects and also has other methods that will talk to the database!
+// ${Collection} is a constructor function which can create new joke objects and also has other methods that will talk to the database!
 // the .then() will only execute upon successfully inserting data in the database
 // the .catch() will execute only if there is an error.
 
-const ${Database} = require('../models/${LowercaseDatabase}.model');
+const ${Collection} = require('../models/${LowercaseCollection}.model');
 
-module.exports.findAll${Database}s = (req, res) => {
-  ${Database}.find() // retrieve an array of all documents in the collection
-    .then(allDa${Database}s => res.json({ ${LowercaseDatabase}s: allDa${Database}s }))
+module.exports.index = (req, res) => {
+  res.json({
+    message: "Hello World"
+  });
+}
+
+module.exports.findAll${Collection}s = (req, res) => {
+  ${Collection}.find() // retrieve an array of all documents in the collection
+    .then(allDa${Collection}s => res.json({ ${LowercaseCollection}s: allDa${Collection}s }))
     .catch(err => res.json({ message: 'Something went wrong', error: err }));
 }
 
-module.exports.findOneSingle${Database} = (req, res) => {
-  ${Database}.findOne({ _id: req.params.id })
-    .then(oneSingle${Database} => res.json({ ${LowercaseDatabase}: oneSingle${Database}}))
+module.exports.findOneSingle${Collection} = (req, res) => {
+  ${Collection}.findOne({ _id: req.params.id })
+    .then(oneSingle${Collection} => res.json({ ${LowercaseCollection}: oneSingle${Collection}}))
     .catch(err => res.json({ message: 'Something went wrong', error: err }));
 }
 
-module.exports.createNew${Database} = (req, res) => {
-  ${Database}.create(req.body)
-    // .then(res.json(${Database}))
-    .then(newlyCreated${Database} => res.json({ ${LowercaseDatabase}: newlyCreated${Database} }))
+module.exports.createNew${Collection} = (req, res) => {
+  ${Collection}.create(req.body)
+    // .then(res.json(${Collection}))
+    .then(newlyCreated${Collection} => res.json({ ${LowercaseCollection}: newlyCreated${Collection} }))
     .catch(err => res.json({ message: 'Something went wrong', error: err }));
 }
 
-module.exports.updateExisting${Database} = (req, res) => {
-  ${Database}.findOneAndUpdate(
+module.exports.updateExisting${Collection} = (req, res) => {
+  ${Collection}.findOneAndUpdate(
     { _id: req.params.id },
     req.body,
     { new: true, runValidators: true }
   )
-    .then(updated${Database} => res.json({ ${LowercaseDatabase}: updated${Database} }))
+    .then(updated${Collection} => res.json({ ${LowercaseCollection}: updated${Collection} }))
     .catch(err => res.json({ message: 'Something went wrong', error: err }));
 }
 
-module.exports.deleteAnExisting${Database} = (req, res) => {
-  ${Database}.deleteOne({ _id: req.params.id })
+module.exports.deleteAnExisting${Collection} = (req, res) => {
+  ${Collection}.deleteOne({ _id: req.params.id })
     .then(result => res.json({ result: result }))
     .catch(err => res.json({ message: 'Something went wrong', error: err }));
 }
 "@
 
-New-Item -Path .\server\controllers -Name "${LowercaseDatabase}.controller.js" -ItemType "file" -Value $ControllerContent
+New-Item -Path .\server\controllers -Name "${LowercaseCollection}.controller.js" -ItemType "file" -Value $ControllerContent
 
 $ModelContent = @"
 const mongoose = require("mongoose");
@@ -125,32 +132,35 @@ const ${Database}Schema = new mongoose.Schema(
   { timestamps: true } // Assigns createdAt and updatedAt fields
 );
 
-const ${Database} = mongoose.model(db_name, ${Database}Schema);
-module.exports = ${Database};
+const ${Collection} = mongoose.model(db_name, ${Database}Schema);
+module.exports = ${Collection};
 "@
 
-New-Item -Path .\server\models -Name "${LowercaseDatabase}.model.js" -ItemType "file" -Value $ModelContent
+New-Item -Path .\server\models -Name "${LowercaseCollection}.model.js" -ItemType "file" -Value $ModelContent
 
 $RoutesContent = @"
-// import * as ${Database}Controller from "../controllers/${LowercaseDatabase}.controller";
-const ${Database}Controller = require('../controllers/${LowercaseDatabase}.controller');
+// import * as ${Collection}Controller from "../controllers/${LowercaseCollection}.controller";
+const ${Collection}Controller = require('../controllers/${LowercaseCollection}.controller');
 
 module.exports = (app) => {
-  app.get('/api/${LowercaseDatabase}s', ${Database}Controller.findAll${Database}s);
-  app.get('/api/${LowercaseDatabase}s/:id', ${Database}Controller.findOneSingle${Database});
-  app.put('/api/${LowercaseDatabase}s/:id', ${Database}Controller.updateExisting${Database});
-  app.post('/api/${LowercaseDatabase}s', ${Database}Controller.createNew${Database});
-  app.delete('/api/${LowercaseDatabase}s/:id', ${Database}Controller.deleteAnExisting${Database});
+  app.get('/api', ${Collection}Controller.index);
+  app.get('/api/${LowercaseCollection}s', ${Collection}Controller.findAll${Collection}s);
+  app.get('/api/${LowercaseCollection}s/:id', ${Collection}Controller.findOneSingle${Collection});
+  app.put('/api/${LowercaseCollection}s/:id', ${Collection}Controller.updateExisting${Collection});
+  app.post('/api/${LowercaseCollection}s', ${Collection}Controller.createNew${Collection});
+  app.delete('/api/${LowercaseCollection}s/:id', ${Collection}Controller.deleteAnExisting${Collection});
 }
 "@
 
-New-Item -Path .\server\routes -Name "${LowercaseDatabase}.routes.js" -ItemType "file" -Value $RoutesContent
+New-Item -Path .\server\routes -Name "${LowercaseCollection}.routes.js" -ItemType "file" -Value $RoutesContent
 
 npx create-react-app client
 
 # Front-end dependencies
 Set-Location client
 npm i axios react-router-dom bootstrap
+
+New-Item -Path .\src -Name "components" -ItemType Directory
 
 $IndexJSPath = '.\src\index.js'
 
@@ -169,6 +179,43 @@ $NewContent = Get-Content -Path $IndexJSPath |
 
 # Write content of $NewContent variable back to file
 $NewContent | Out-File -FilePath $IndexJSPath -Encoding Default -Force
+
+$AppJSPath = '.\src\App.js'
+
+$NewAppJSContent = Get-Content -Path $AppJSPath |
+ForEach-Object {
+  # Output the existing line to pipeline in any case
+  $_
+
+  # If line matches regex
+  if ($_ -match ('^' + [regex]::Escape('<div className="App">'))) {
+    "<Main />"
+  }
+}
+
+# Write content of $NewAppJSContent variable back to file
+$NewAppJSContent | Out-File -FilePath $AppJSPath -Encoding Default -Force
+
+$MainContent = @"
+import React, { useEffect, useState } from 'react'
+import axios from 'axios';
+
+function Main() {
+  const [message, setMessage] = useState("Loading...")
+  useEffect(() => {
+    axios.get("http://localhost:8000/api")
+      .then(res => setMessage(res.data.message))
+  }, []);
+  return (
+    <div>
+      <h2>Message from the backend: { message }</h2>
+    </div>
+  )
+}
+export default Main;
+"@
+
+New-Item -Path .\src\components -Name "Main.jsx" -ItemType "file" -Value $MainContent
 
 # New-Item -Path . -Name "directory name" -ItemType Directory
 # New-Item -Path .\server -ItemType Directory

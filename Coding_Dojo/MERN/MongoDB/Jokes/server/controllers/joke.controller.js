@@ -20,7 +20,6 @@ module.exports.findOneSingleJoke = (req, res) => {
 }
 
 module.exports.createNewJoke = (req, res) => {
-    console.log(req.body);
   Joke.create(req.body)
     // .then(res.json(Joke))
     .then(newlyCreatedJoke => res.json({ joke: newlyCreatedJoke }))
